@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 298.8 221.73">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #c844ff;
+      }
+
+      .cls-2 {
+        fill: #272426;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>Asset 7</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Logo_white_ver">
+      <rect class="cls-1" width="298.8" height="221.73"/>
+      <image width="293" height="92" transform="translate(28.6 18.69) scale(0.82)" xlink:href="rokuw.png"/>
+      <g id="FBK_white">
+        <g>
+          <path class="cls-2" d="M58.53,135.52v10.64H84.41v15.77H58.53v19.85H37.62v-62H88v15.77Z"/>
+          <path class="cls-2" d="M155.84,164.68c0,10.81-9.13,17.1-26.23,17.1H94.69v-62h33.14c17.11,0,25.08,6.82,25.08,16.22,0,5.76-2.92,10.54-8.59,13.38C151.58,152,155.84,157.32,155.84,164.68Zm-40.59-30.31v9.22H125c4.69,0,6.82-1.6,6.82-4.61s-2.13-4.61-6.82-4.61Zm19.5,27.92c0-3.19-2.31-4.88-6.92-4.88H115.25v9.75h12.58C132.44,167.16,134.75,165.48,134.75,162.29Z"/>
+          <path class="cls-2" d="M188.45,161.22l-4.7,5.23v15.33H163.19v-62h20.56v22.51l20.38-22.51h22.78L202.09,147l26.06,34.74H204Z"/>
+        </g>
+        <polygon class="cls-3" points="237.26 119.58 260.21 119.58 235.47 147.02 261.56 181.66 237.26 181.66 211.62 147.47 237.26 119.58"/>
+      </g>
+    </g>
+  </g>
+</svg>
