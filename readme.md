@@ -17,3 +17,4 @@ Site is under construction.
 
 ##### project notes and TODOs
 - gulp to minify js files
+- update DB config and FetchAPI
