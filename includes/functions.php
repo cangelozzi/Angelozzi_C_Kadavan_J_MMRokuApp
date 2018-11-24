@@ -1,5 +1,5 @@
 <?php
-include 'connect.php';
+require 'connect.php';
 
 function get_single_video($pdo, $vid)
 {
@@ -15,7 +15,7 @@ function get_single_video($pdo, $vid)
 
 function get_all_videos($pdo)
 {
-  $query = "SELECT * FROM tbl_videos";
+  $query = "SELECT * FROM `tbl_videos`";
   $get_video = $pdo->query($query);
   $results = array();
   while ($row = $get_video->fetch(PDO::FETCH_ASSOC)) {
