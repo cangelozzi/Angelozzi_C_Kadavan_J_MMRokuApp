@@ -3,3 +3,21 @@ html {
   /* 62.5% of 16px is 10px which is 1rem */
   min-height: 100%;
 }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: $bckgrd;
+}
+
+// FOR TESTING PURPOSES
+#welcome {
+  color: $color-white;
+  margin-top: 20rem;
+  text-align: center;
+}
+
+#logo {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+}
