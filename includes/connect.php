@@ -1,31 +1,10 @@
 <?php
-class Database
-{
-    // Note: specify your own database credentials
-  private $host = "localhost";
-
-  private $db_name = "db_roku_app";
-
-  private $username = "root";
-
-  private $password = "root";
-
-  public $conn;
-
-    // get the database connection
-  public function getConnection()
-  {
-
-    $this->conn = null;
-
-    try {
-      $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
-      $this->conn->exec("set names utf8");
-    } catch (PDOException $exception) {
-      echo "Connection error: " . $exception->getMessage();
-    }
-
-    return $this->conn;
-  }
+$user = "root";
+$pw = "root";
+try {
+  $conn = new PDO('mysql:host=localhost;dbname=db_video_player', $user, $pw);
+        //var_dump($conn);
+} catch (PDOException $exception) {
+  echo 'connect error!' . $exception->getMessage();
 }
 ?>
