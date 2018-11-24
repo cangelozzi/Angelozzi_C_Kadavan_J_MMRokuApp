@@ -1,6 +1,6 @@
 
 <?php
-include 'functions.php';
+require 'functions.php';
 
 if (isset($_GET['movie'])) {
   

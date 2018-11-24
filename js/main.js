@@ -7,6 +7,8 @@
     data: {
       welcomeMsg: "Welcome to Roku Flashback App.",
       navList: ['Movie_FBK', 'TV_FBK', 'Music_FBK', 'Profile', 'Settings'],
+      videodata: [],
+      singlemoviedata: [],
     },
 
     created: function() {
