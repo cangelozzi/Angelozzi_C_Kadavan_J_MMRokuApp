@@ -13,8 +13,12 @@ unique viewing experience for their children. These features may include, but ma
 exclusive to, such things as ratings, age appropriate (G, Family, PG, AA, A17) genres (rock, rap,
 country, jazz, classical, etc...), cartoons, live action, anime, etc.
 
-Site is under construction.
 
-##### project notes and TODOs
-- gulp to minify js files
-- update DB config and FetchAPI
+#### TOOLS USED
+- SASS 
+- GULP
+- Vue.js for handling data to frontend DOM.
+- PHP connection via PDO class to connect with database.
+- FetchAPI to get data from db query.
+
+###### Under Construction, due 2019
