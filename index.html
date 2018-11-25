@@ -61,8 +61,13 @@
       </header>
       <!-- HEADER end -->
 
+      <!-- TESTING DATABASE CONNECTION -->
       <h1 id="welcome">{{ welcomeMsg }}</h1>
       <img id="logo" src="images/logo/logo_hor_black.png" alt="logo">
+      <ul>
+        <li style="color:white" v-for="video in videodata">{{ video.video_name }}</li>
+      </ul>
+        <!-- END TESTING DATABASE CONNECTION -->
 
     </main>
 
