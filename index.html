@@ -7,7 +7,10 @@
     <title>Roku Flashback App</title>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700"
+      rel="stylesheet"
+    />
     <script
       defer
       src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"
@@ -17,20 +20,18 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
   </head>
   <body>
-
     <main id="app">
-
-      <!-- HEADER -->
+      <!-- NAVIGATION HEADER -->
       <nav-header :navlist="navlist"></nav-header>
-      <!-- HEADER end -->
+      <!-- NAVIGATION HEADER end -->
 
-      <!-- TESTING DATABASE CONNECTION -->
-      <img id="logo" src="images/logo/logo_hor_black.png" alt="logo">
+      
+      <img id="logo" src="images/logo/logo_hor_black.png" alt="logo" />
+      <img id="darkMode" src="images/dark_mode.svg" alt="dark mode switch" />
       <h1 id="welcome">{{ welcomeMsg }}</h1>
       <ul>
         <li style="color:white" v-for="video in videodata">{{ video.video_name }}</li>
       </ul>
-        <!-- END TESTING DATABASE CONNECTION -->
 
     </main>
 
