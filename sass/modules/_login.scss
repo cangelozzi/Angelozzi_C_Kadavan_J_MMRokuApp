@@ -1,0 +1,81 @@
+#login {
+  margin-top: 20rem;
+}
+
+.login {
+  width: 80%;
+  margin: -48px auto;
+  font-size: 14px;
+}
+
+/* The triangle form is achieved by a CSS hack */
+.login-triangle {
+  width: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border: 12px solid transparent;
+  border-bottom-color: $color-white;
+  margin-top: 2.4rem;
+}
+
+.login-container {
+  display: none;
+  margin-top: 6rem;
+}
+
+/* Every row inside .login-container is defined with p tags */
+.login p {
+  padding: 12px;
+}
+
+.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 8px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+}
+
+/* Text fields' focus effect */
+.login input[type="text"]:focus,
+.login input[type="password"]:focus {
+  border-color: #888;
+}
+
+.login button {
+  background: $dark-purple;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px;
+  width: 248px;
+  text-align: center;
+  margin-left: 12px;
+  margin-top: 10px;
+  border-style: solid;
+  padding: 8px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+
+.login button:hover {
+  background: $color-white;
+  color: $dark-purple;
+}
+
+/* Buttons' focus effect */
+.login button:focus {
+  border-color: $dark-purple;
+}

@@ -1,0 +1,20 @@
+#profiles {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3.6rem;
+  margin-bottom: 1.6rem;
+  color: $dark-purple;
+  text-transform: uppercase;
+}
+
+#parentsIcon {
+  margin-right: 12rem;
+}
+
+#kidsIcon {
+  margin-left: 2rem;
+}
+
+#parentsZone, #kidsZone {
+  display: inline;
+}
