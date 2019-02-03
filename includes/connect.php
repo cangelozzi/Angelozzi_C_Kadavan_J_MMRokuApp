@@ -3,7 +3,7 @@
 //! Use Associative Array, for connection details.
 $dbn_dsn = array(
   'host' => 'localhost',
-  'dbname' => 'db_video_player',
+  'dbname' => 'db_roku_fbk',
   'charset' => 'utf8',
 );
 

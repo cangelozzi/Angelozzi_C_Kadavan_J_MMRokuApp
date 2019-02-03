@@ -20,7 +20,7 @@ function get_single_video($pdo, $vid)
 function get_all_videos($pdo)
 {
     // prepare query
-  $statement = $pdo->prepare("SELECT * FROM `tbl_videos`");
+  $statement = $pdo->prepare("SELECT * FROM `tbl_movie`");
   // execute query
   $statement->execute();
   

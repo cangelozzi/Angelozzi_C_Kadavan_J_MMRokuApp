@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="43.987" height="35.993" viewBox="0 0 43.987 35.993">
+  <g id="Animation" transform="translate(-2.007 -6.007)">
+    <circle id="Ellipse_109" data-name="Ellipse 109" cx="14" cy="14" r="14" transform="translate(10 14)" fill="#455a64"/>
+    <path id="Path_118" data-name="Path 118" d="M42.7,9.3c3.7,3.7,4.4,9,1.5,11.9S36,23.4,32.3,19.7s-4.4-9-1.5-11.9S39,5.6,42.7,9.3Z" fill="#455a64"/>
+    <path id="Path_119" data-name="Path 119" d="M5.3,9.3C1.6,13,.9,18.3,3.8,21.2s8.2,2.2,11.9-1.5,4.4-9,1.5-11.9S9,5.6,5.3,9.3Z" fill="#455a64"/>
+    <path id="Path_120" data-name="Path 120" d="M35.2,30.6c-1.1-1.1-2-.9-3.1-.3a22.562,22.562,0,0,0,2-7.6,5,5,0,0,0-10,0h0a5,5,0,0,0-10,0,22.563,22.563,0,0,0,2,7.6c-1.2-.6-2.1-.7-3.1.3C10.5,33.1,17.2,41,24.2,41S37.8,33.1,35.2,30.6Z" fill="#ffe0b2"/>
+    <ellipse id="Ellipse_110" data-name="Ellipse 110" cx="2.8" cy="2" rx="2.8" ry="2" transform="translate(21.5 32.4)" fill="#263238"/>
+    <ellipse id="Ellipse_111" data-name="Ellipse 111" cx="1" cy="3" rx="1" ry="3" transform="translate(26 25)" fill="#263238"/>
+    <ellipse id="Ellipse_112" data-name="Ellipse 112" cx="1" cy="3" rx="1" ry="3" transform="translate(20 25)" fill="#263238"/>
+    <ellipse id="Ellipse_113" data-name="Ellipse 113" cx="1.2" cy="0.9" rx="1.2" ry="0.9" transform="translate(22.8 33.3)" fill="#607d8b"/>
+  </g>
+</svg>

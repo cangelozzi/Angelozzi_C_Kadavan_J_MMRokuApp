@@ -1,0 +1,49 @@
+#footer {
+  display: flex;
+}
+
+// Social Icons
+.social {
+
+  margin-left: 2rem;
+
+  li {
+    display: inline;
+    margin-right: 20px;
+    font-size: 2.4rem;
+
+    a {
+      color: $dark-grey;
+      list-style: none;
+      text-decoration: none;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.fa-youtube:hover {
+  color: red;
+}
+
+.fa-twitter:hover {
+  color: deepskyblue;
+}
+
+.fa-instagram:hover {
+  color: rgb(236, 156, 8);
+}
+
+.fa-facebook-square:hover {
+  color: dodgerblue;
+}
+
+.terms {
+  list-style: none;
+  display: flex;
+  margin-top: 1rem;
+
+  li {
+    margin-left: 1rem;
+  }
+
+}
