@@ -21,3 +21,12 @@ body {
   display: block;
   margin: 0 auto;
 }
+
+[data-palette="0"] {
+  background: $bckgrd;
+}
+
+[data-palette="1"] {
+  background: $light-grey;
+  color: $almost-black;
+}
