@@ -6,7 +6,6 @@ import UsersComponent from './components/UsersComponent.js';
 const routes = [
   // { path: '/', redirect: { name: "login" } },
   { path: '/', name: "home", component: HomeComponent },
-  { path: '/login', name: "login", component: LoginComponent },
   { path: '/users', name: "users", component: UsersComponent }
 ];
 
@@ -20,19 +19,18 @@ const vm = new Vue({
 
   data: {
     authenticated: false,
-    mockAccount: {
-      username: "camillo",
-      password: 123
-    }
   },
 
-  created: function() {
-    console.log("Parent Created");
+  mounted() {
+    this.$root.$on('authenticated', data => {
+        this.authenticated = data;
+    });
   },
 
   methods: {
-    setAuthenticated(status) {
-      this.authenticated = status;
+    setAuthenticated() {
+      this.authenticated = true;
+      
     },
 
     logout() {
@@ -44,13 +42,13 @@ const vm = new Vue({
 }).$mount("#app");
 
 //! ---------- redirect if not authenticated --------------
-// router.beforeEach((to, from, next) => {
-//   console.log('check router guard : beforeEach');
+router.beforeEach((to, from, next) => {
+  console.log(vm.authenticated);
 
-//   if (!vm.authenticated) {
-//     next('/login');
-//   } else {
-//     next();
-//   }
-// });
+  if (!vm.authenticated) {
+    next('/');
+  } else {
+    next();
+  }
+});
 
