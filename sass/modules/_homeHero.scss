@@ -6,6 +6,28 @@
   background-image: url("../images/hero_bckg.jpg");
   background-color: #cccccc;
   background-size: cover;
-  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 46%, 0 100%);
-  clip-path: polygon(0 0, 100% 0%, 100% 46%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 69%, 0 100%);
+  clip-path: polygon(0 0, 100% 0%, 100% 69%, 0 100%);
+  color: $light-grey;
+
+  p {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+  }
+}
+
+#tagline {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-top: 2rem;
+}
+
+#arrow {
+  position: absolute;
+  top: 84%;
+  left: 76%;
+  z-index: 9999;
+  color: white;
+  font-size: 4rem;
 }
