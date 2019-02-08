@@ -21,34 +21,39 @@ export default {
 
   methods: {
     login() {
+
       // check against Database user
       if (this.input.username !== "" && this.input.password !== "") {
-        // fetch from DB backend
-        let url = `./includes/index.php?username=${
-          this.input.username
-        }&&password=${this.input.password}`;
 
-        fetch(url)
+        // create some form.data(key);
+        let formData = new FormData();
+        formData.append("username", this.input.username);
+        formData.append("password", this.input.password);
+
+        // fetch from DB backend
+        let url = `./admin/admin_login.php`;
+
+        fetch(url, {
+          method: 'POST',
+          body: formData
+        })
           .then(res => res.json())
           .then(data => {
-            if (!data[0]) {
+            if (!data) {
               console.log("Authentication Failed");
             } else {
-              let username = data[0].username;
-              let psw = data[0].password;
-
-              if (this.input.username === username && this.input.password === psw) {
-                this.$root.$emit("authenticated", true);
-                this.$router.replace({ name: "users" });
-              }
+              this.$root.$emit("authenticated", true);
+              this.$router.replace({ name: "users" });
             }
           })
-          .catch(function(error) {
+          .catch(function (error) {
             console.error(error);
           });
+
       } else {
-        console.log("Fields cannot be left blank!");
+        console.log('Fields cannot be left blank!');
       }
+
     }
   }
 };
