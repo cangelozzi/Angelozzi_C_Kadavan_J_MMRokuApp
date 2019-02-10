@@ -7,7 +7,8 @@ export default {
         <i id="arrow" class="fas fa-arrow-circle-right"></i>
       </div>
       <div id="home_hero">
-        <h1 id="tagline">Flashback to 50s, 60s, 70s, 80s, 90s</h1>
+        <h1 class="tagline" v-if="show">Flashback</h1>
+        <h1 class="tagline" v-if="show">50s, 60s, 70s, 80s, 90s</h1>
         <p>Movies, Shows, Music and much more...</p>
       <LoginComponent :loginShow=loginShow />
       </div>
@@ -17,7 +18,8 @@ export default {
     return {
       loginShow: false,
       authenticated: false,
-      arrowShow: true
+      arrowShow: true,
+      show: true
     };
   },
 
@@ -25,6 +27,7 @@ export default {
     showLogin() {
       this.loginShow = true;
       this.arrowShow = false;
+      this.show = false;
     }
   },
 

@@ -10,7 +10,7 @@ export default {
 
   data() {
     return {
-      navlist: ["Movies", "Television", "Music", "Login", "Register"]
+      navlist: ["Movies", "Television", "Music", "Register"]
     };
   },
 

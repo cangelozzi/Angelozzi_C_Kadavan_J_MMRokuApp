@@ -12,15 +12,19 @@
 
   p {
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin-top: 1rem;
   }
 }
 
-#tagline {
+.tagline {
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 2rem;
   margin-top: 2rem;
+}
+
+.tagline:first-child {
+  font-size: 4rem;
 }
 
 #arrow {
@@ -30,4 +34,6 @@
   z-index: 9999;
   color: $dark-purple;
   font-size: 4rem;
+  cursor: pointer;
+  animation: arrow 4s infinite;
 }

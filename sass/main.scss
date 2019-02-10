@@ -7,6 +7,9 @@
 // import page fundamentals rules
 @import '_base';
 
+// import animations rules
+@import '_animations';
+
 // import modules components
 @import 'modules/hamburgerNav';
 @import 'modules/header';
