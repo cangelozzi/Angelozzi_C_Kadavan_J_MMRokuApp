@@ -26,7 +26,7 @@ export default {
         <li>Privacy</li>
       </ul>
 
-      <img id="kidsIcon" src="images/logo/roku.svg" alt="Roku footer icon" />
+      <img id="smallLogo" src="images/logo/roku.svg" alt="Roku footer icon" />
 
     </footer>
   `

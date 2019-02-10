@@ -1,11 +1,10 @@
 #footer {
   display: flex;
+  margin-left: 3.2rem;
 }
 
 // Social Icons
 .social {
-
-  margin-left: 2rem;
 
   li {
     display: inline;
@@ -40,10 +39,17 @@
 .terms {
   list-style: none;
   display: flex;
-  margin-top: 1rem;
+  margin-top: 1.2rem;
+  margin-left: -9px;
+
 
   li {
     margin-left: 1rem;
   }
 
+}
+
+#smallLogo {
+  margin-left: 2rem;
+  margin-bottom: -0.2rem;
 }
