@@ -30,6 +30,11 @@
     transition: transform 0.8s cubic-bezier(0.69, 0, 0.007, 1),
       -webkit-transform 0.8s cubic-bezier(0.69, 0, 0.007, 1);
     opacity: 1;
+
+    // tablet size media queries at 760px
+    @media screen and (min-width: 760px) {
+      width: 0.6rem;
+    }
   }
 
   &__nav {
@@ -52,6 +57,18 @@
     list-style: none;
     text-align: center;
     width: 100%;
+
+    // tablet size media queries at 760px
+    @media screen and (min-width: 760px) {
+      left: 60%;
+      top: 18rem;
+    }
+
+    // desktop size media queries at 1200px
+    @media screen and (min-width: 1200px) {
+      left: 49%;
+      top: 10rem;
+    }
   }
 
   &__item {
@@ -184,4 +201,3 @@
 .fa-facebook-square:hover {
   color: dodgerblue;
 }
-

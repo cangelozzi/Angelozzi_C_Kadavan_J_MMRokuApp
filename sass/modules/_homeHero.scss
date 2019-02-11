@@ -10,10 +10,25 @@
   clip-path: polygon(0 0, 100% 0%, 100% 69%, 0 100%);
   color: $light-grey;
 
+  // tablet size media queries at 760px
+  @media screen and (min-width: 760px) {
+    height: 61rem;
+  }
+
+  // desktop size media queries at 1200px
+  @media screen and (min-width: 1200px) {
+    height: 48rem;
+  }
+
   p {
     text-align: center;
     font-size: 1.6rem;
     margin-top: 1rem;
+
+    // tablet size media queries at 760px
+    @media screen and (min-width: 760px) {
+      font-size: 3rem;
+    }
   }
 }
 
@@ -21,10 +36,34 @@
   text-align: center;
   font-size: 2rem;
   margin-top: 2rem;
+
+  color: $light-purple;
+  -webkit-text-fill-color: $color-white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $light-purple;
+
+  // tablet size media queries at 760px
+  @media screen and (min-width: 760px) {
+    font-size: 4rem;
+  }
 }
 
 .tagline:first-child {
   font-size: 4rem;
+  font-weight: bolder;
+  color: $light-purple;
+  -webkit-text-fill-color: $color-white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: $light-purple;
+
+  -webkit-box-shadow: 10px 10px 140px 8px rgba(0, 0, 0, 0.48);
+  -moz-box-shadow: 10px 10px 140px 8px rgba(0, 0, 0, 0.48);
+  box-shadow: 10px 10px 140px 8px rgba(0, 0, 0, 0.48);
+
+  // tablet size media queries at 760px
+  @media screen and (min-width: 760px) {
+    font-size: 11rem;
+  }
 }
 
 #arrow {
@@ -36,4 +75,21 @@
   font-size: 4rem;
   cursor: pointer;
   animation: arrow 4s infinite;
+
+  // tablet size media queries at 760px
+  @media screen and (min-width: 760px) {
+    top: 86%;
+    left: 80%;
+  }
+
+  // tablet size media queries at 760px LANDSCAPE
+  @media screen and (min-width: 375px) and (orientation: landscape) {
+    top: 100%;
+  }
+
+  // desktop size media queries at 1200px
+  @media screen and (min-width: 1200px) {
+    top: 86%;
+    left: 86%;
+  }
 }

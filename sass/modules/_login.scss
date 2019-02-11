@@ -20,6 +20,10 @@
 
 .login-container {
   margin-top: 6rem;
+  // tablet size media queries at 760px
+  @media screen and (min-width: 760px) {
+    margin-top: 11rem;
+  }
 }
 
 /* Every row inside .login-container is defined with p tags */
@@ -67,6 +71,12 @@
   outline: 0;
   font-family: inherit;
   font-size: 0.95em;
+
+  // desktop size media queries at 1200px
+  @media screen and (min-width: 1200px) {
+    margin-left: 20.5rem;
+    margin-top: 4.8rem;
+  }
 }
 
 .login button:hover {
@@ -77,4 +87,12 @@
 /* Buttons' focus effect */
 .login button:focus {
   border-color: $dark-purple;
+}
+
+.login input {
+  // desktop size media queries at 1200px
+  @media screen and (min-width: 1200px) {
+    width: 69%;
+    margin: 0 auto;
+  }
 }
