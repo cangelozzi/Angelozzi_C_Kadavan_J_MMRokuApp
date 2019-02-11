@@ -1,5 +1,16 @@
 #logo {
-  margin-top: 3rem;
+  margin-top: rem;
+
+  // XS mobile size media queries at 375px LANDSCAPE
+  @media screen and (min-width: 375px) and (orientation: landscape) {
+    margin-top: 1rem;
+    width: 30%;
+  }
+
+  // tablet size media queries at 760px
+  @media screen and (min-width: 760px) {
+    margin-top: 3rem;
+  }
 }
 
 #darkMode {
@@ -7,4 +18,15 @@
   top: 3.9rem;
   right: 3rem;
   width: 2.6rem;
+  cursor: pointer;
+
+  // tablet size media queries at 760px
+  @media screen and (min-width: 760px) {
+    top: 5.8rem;
+  }
+
+  // desktop size media queries at 1200px
+  @media screen and (min-width: 1200px) {
+    right: 9rem;
+  }
 }

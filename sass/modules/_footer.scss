@@ -1,10 +1,30 @@
 #footer {
   display: flex;
   margin-left: 3.2rem;
+
+  // XS mobile size media queries at 375px LANDSCAPE
+  @media screen and (min-width: 375px) and (orientation: landscape) {
+    margin-left: 25rem;
+  }
+
+  // tablet size media queries at 760px
+  @media screen and (min-width: 760px) {
+    margin-left: 25rem;
+  }
+
+  // desktop size media queries at 1200px
+  @media screen and (min-width: 1200px) {
+    margin-left: 50%;
+    margin-top: -3rem;
+  }
 }
 
 // Social Icons
 .social {
+  // desktop size media queries at 1200px
+  @media screen and (min-width: 1200px) {
+    margin-top: -1rem;
+  }
 
   li {
     display: inline;
@@ -42,11 +62,14 @@
   margin-top: 1.2rem;
   margin-left: -9px;
 
+  // desktop size media queries at 1200px
+  @media screen and (min-width: 1200px) {
+    margin-top: 0;
+  }
 
   li {
     margin-left: 1rem;
   }
-
 }
 
 #smallLogo {

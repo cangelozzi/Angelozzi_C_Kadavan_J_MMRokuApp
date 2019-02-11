@@ -2,4 +2,40 @@
   display: flex;
   justify-content: space-around;
   margin-top: 3.6rem;
+
+  // tablet size media queries at 760px
+  @media screen and (min-width: 760px) {
+    margin-top: 4.8rem;
+  }
+
+  // desktop size media queries at 1200px
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 6rem;
+    margin-left: 27rem;
+    justify-content: normal;
+  }
+}
+
+#movieIcon,
+#tvIcon,
+#musicIcon {
+  // tablet size media queries at 760px
+  @media screen and (min-width: 760px) {
+    width: 8rem;
+  }
+}
+
+.sel {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 0;
+  stroke-width: 2px;
+  stroke: purple;
+  animation: pure 4.9s;
+  animation-iteration-count: infinite;
+  /*   animation-direction: alternate; */
+  animation-timing-function: ease-in-out;
+}
+
+#movieIcon {
+  margin-left: 3rem;
 }
