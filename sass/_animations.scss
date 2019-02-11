@@ -9,3 +9,13 @@
     transform: translateY(0);
   }
 }
+
+@keyframes pure {
+  0% {
+    stroke-dashoffset: 2000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: purple;
+  }
+}

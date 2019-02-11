@@ -7,7 +7,7 @@ export default {
         <i id="arrow" class="fas fa-arrow-circle-right"></i>
       </div>
       <div id="home_hero">
-        <h1 class="tagline" v-if="show">Flashback</h1>
+        <h1 class="tagline" v-if="show">FLASHBACK</h1>
         <h1 class="tagline" v-if="show">50s, 60s, 70s, 80s, 90s</h1>
         <p>Movies, Shows, Music and much more...</p>
       <LoginComponent :loginShow=loginShow />

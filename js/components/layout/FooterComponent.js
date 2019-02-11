@@ -26,7 +26,7 @@ export default {
         <li>Privacy</li>
       </ul>
 
-      <img id="smallLogo" src="images/logo/roku.svg" alt="Roku footer icon" />
+      <a href="https://www.roku.com/en-ca/products/roku-tv" target="_blank"><img id="smallLogo" src="images/logo/roku.svg" alt="Roku footer icon" /></a>
 
     </footer>
   `
