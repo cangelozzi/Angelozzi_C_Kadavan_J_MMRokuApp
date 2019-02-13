@@ -1,20 +1,21 @@
 // import variables
-@import '_vars';
+@import "_vars";
 
 // import utilities rules
-@import '_utilities';
+@import "_utilities";
 
 // import page fundamentals rules
-@import '_base';
+@import "_base";
 
 // import animations rules
-@import '_animations';
+@import "_animations";
 
 // import modules components
-@import 'modules/hamburgerNav';
-@import 'modules/header';
-@import 'modules/login';
-@import 'modules/selection';
-@import 'modules/profiles';
-@import 'modules/homeHero';
-@import 'modules/footer';
+@import "modules/hamburgerNav";
+@import "modules/header";
+@import "modules/login";
+@import "modules/selection";
+@import "modules/profiles";
+@import "modules/homeHero";
+@import "modules/footer";
+@import "modules/parents";

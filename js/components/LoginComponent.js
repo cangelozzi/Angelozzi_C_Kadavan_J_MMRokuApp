@@ -21,10 +21,8 @@ export default {
 
   methods: {
     login() {
-
       // check against Database user
       if (this.input.username !== "" && this.input.password !== "") {
-
         // create some form.data(key);
         let formData = new FormData();
         formData.append("username", this.input.username);
@@ -34,7 +32,7 @@ export default {
         let url = `./admin/admin_login.php`;
 
         fetch(url, {
-          method: 'POST',
+          method: "POST",
           body: formData
         })
           .then(res => res.json())
@@ -43,17 +41,15 @@ export default {
               console.log("Authentication Failed");
             } else {
               this.$root.$emit("authenticated", true);
-              this.$router.replace({ name: "users" });
+              this.$router.replace({ name: "parents" });
             }
           })
-          .catch(function (error) {
+          .catch(function(error) {
             console.error(error);
           });
-
       } else {
-        console.log('Fields cannot be left blank!');
+        console.log("Fields cannot be left blank!");
       }
-
     }
   }
 };
