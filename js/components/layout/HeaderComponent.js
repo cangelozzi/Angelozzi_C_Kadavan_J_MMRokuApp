@@ -10,18 +10,18 @@ export default {
 
   data() {
     return {
-      navlist: ["Movies", "Television", "Music", "Register"]
+      navlist: ["Movies", "Television", "Music"]
     };
   },
 
   methods: {
     viewMode() {
       var palette = "0";
-      if (document.body.getAttribute('data-palette') === '0') {
-        palette = '1';
+      if (document.body.getAttribute("data-palette") === "0") {
+        palette = "1";
       }
 
-      document.body.setAttribute('data-palette', palette);
+      document.body.setAttribute("data-palette", palette);
     }
   },
 

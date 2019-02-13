@@ -1,12 +1,10 @@
-import HomeComponent from './components/HomeComponent.js';
-import LoginComponent from './components/LoginComponent.js';
-import UsersComponent from './components/UsersComponent.js';
-
+import HomeComponent from "./components/HomeComponent.js";
+import ParentsComponent from "./components/ParentsComponent.js";
 
 const routes = [
   // { path: '/', redirect: { name: "login" } },
-  { path: '/', name: "home", component: HomeComponent },
-  { path: '/users', name: "users", component: UsersComponent }
+  { path: "/", name: "home", component: HomeComponent },
+  { path: "/parents", name: "parents", component: ParentsComponent }
 ];
 
 const router = new VueRouter({
@@ -18,23 +16,32 @@ const vm = new Vue({
   // el: '#app',
 
   data: {
-    authenticated: false,
+    authenticated: false
   },
 
+  created: function() {},
+
   mounted() {
-    this.$root.$on('authenticated', data => {
-        this.authenticated = data;
+    this.$root.$on("authenticated", data => {
+      this.authenticated = data;
     });
   },
 
   methods: {
     setAuthenticated() {
       this.authenticated = true;
-      
     },
 
     logout() {
       this.authenticated = false;
+    },
+
+    startGlider() {
+      window.addEventListener("load", function() {
+        document
+          .querySelector(".glider")
+          .Glider({ "setting-name": "setting-value" });
+      });
     }
   },
 
@@ -46,9 +53,8 @@ router.beforeEach((to, from, next) => {
   console.log(vm.authenticated);
 
   if (!vm.authenticated) {
-    next('/');
+    next("/");
   } else {
     next();
   }
 });
-

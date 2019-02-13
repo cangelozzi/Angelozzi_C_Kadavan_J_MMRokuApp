@@ -1,0 +1,44 @@
+section {
+  background: $bckgrd;
+}
+
+.movTitle {
+  color: $light-grey;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.movYear {
+  color: $color-white;
+}
+
+.movieGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.box {
+  align-content: center;
+}
+
+.movie-choice {
+  text-align: center;
+  margin-bottom: 3rem;
+  list-style: none;
+}
+
+.hero-body {
+  height: 44rem;
+}
+
+#darkMode {
+  display: none;
+}
+
+.fa-sign-out-alt {
+  color: $light-grey;
+  font-size: 4rem;
+  position: absolute;
+  right: 7rem;
+  top: 4rem;
+}
