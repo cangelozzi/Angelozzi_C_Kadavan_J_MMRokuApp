@@ -41,11 +41,16 @@
     /* height: 100vh; */
     width: 0;
     position: fixed;
-    top: 30rem;
+    top: 40rem;
     right: 0;
     z-index: 1500;
     transition: all 0.8s cubic-bezier(0.69, -0.55, 0.265, 1.55);
     opacity: 0;
+    // tablet size media queries at 760px
+    @media screen and (min-width: 760px) {
+      top: 30rem;
+      right: -2rem;
+    }
   }
 
   &__list {
@@ -200,4 +205,8 @@
 
 .fa-facebook-square:hover {
   color: dodgerblue;
+}
+
+.hide {
+  display: none;
 }

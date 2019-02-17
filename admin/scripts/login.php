@@ -3,8 +3,8 @@
 function login($username, $password, $ip)
 {
     require_once 'connect.php';
-    //Check if username exists
 
+    //Check if username exists
     $check_exist_query = 'SELECT COUNT(*) FROM tbl_user';
     $check_exist_query .= ' WHERE `username` = :username';
 
@@ -50,18 +50,17 @@ function login($username, $password, $ip)
             $user['username'] = $found_user['username'];
             $user['admin'] = $found_user['user_admin'];
             $user['access'] = $found_user['user_access'];
+            $user['active'] = $found_user['user_active'];
 
             return $user;
         }
 
         if (empty($id)) {
-            $message = 'Login Failed!';
-            return $message;
+            return false;
         }
 
         redirect_to('index.php');
     } else {
-        $message = 'Login Failed!';
-        return $message;
+        return false;
     }
 }

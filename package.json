@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cangelozzi/Angelozzi_C_Kadavan_J_MMRokuApp#readme",
   "dependencies": {
+    "bcrypt": "^3.0.4",
     "gulp": "^3.9.1",
     "gulp-sass": "^4.0.1",
     "node-sass": "^4.9.3",

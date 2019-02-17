@@ -1,6 +1,7 @@
 #footer {
   display: flex;
   margin-left: 3.2rem;
+  margin-top: 2rem;
 
   // XS mobile size media queries at 375px LANDSCAPE
   @media screen and (min-width: 375px) and (orientation: landscape) {
@@ -74,5 +75,5 @@
 
 #smallLogo {
   margin-left: 2rem;
-  margin-bottom: -0.2rem;
+  margin-bottom: -1.2rem;
 }

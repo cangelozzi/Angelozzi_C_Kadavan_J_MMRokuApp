@@ -1,5 +1,4 @@
-import LoginComponent from "./../LoginComponent";
-
+import LoginComponent from "../LoginComponent";
 export default {
   template: `
     <section id="hero">
@@ -21,6 +20,13 @@ export default {
       arrowShow: true,
       show: true
     };
+  },
+
+  mounted() {
+    this.$root.$on("loginShow", data => {
+      this.loginShow = data;
+      this.show = false;
+    });
   },
 
   methods: {

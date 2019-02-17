@@ -24,4 +24,4 @@ country, jazz, classical, etc...), cartoons, live action, anime, etc.
 ###### Under Construction, due 2019
 
 - https://glidejs.com
--
+- https://marketplace.visualstudio.com/items?itemName=pushqrdx.inline-html

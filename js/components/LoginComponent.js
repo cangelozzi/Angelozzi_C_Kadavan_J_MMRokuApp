@@ -1,10 +1,12 @@
+import auth from "../auth";
 export default {
   props: ["loginShow"],
   template: `
     <div class="login">
-      <div v-if="loginShow" class="login-container">
-        <p><input type="text" name="username" v-model="input.username" placeholder="test parent: theBoss ..test kid: theKid " required ></p>
-        <p><input type="password" name="password" v-model="input.password" placeholder="for Test use: 123" required></p>
+    <div v-if="loginShow" class="login-container">
+    <h1 id="isAuth" v-if="isAuth">Username or Password are not correct. Please try again.</h1>
+        <p><input type="text" name="username" v-model="input.username" placeholder="for test use: theBoss" required ></p>
+        <p><input type="password" name="password" v-model="input.password" placeholder="for test use: 123" required></p>
         <button type="button" @click="login()">Login Here</button>
       </div>
     </div>
@@ -15,7 +17,8 @@ export default {
       input: {
         username: "",
         password: ""
-      }
+      },
+      isAuth: false
     };
   },
 
@@ -28,7 +31,7 @@ export default {
         formData.append("username", this.input.username);
         formData.append("password", this.input.password);
 
-        // fetch from DB backend
+        // fetch to DB backend
         let url = `./admin/admin_login.php`;
 
         fetch(url, {
@@ -37,11 +40,22 @@ export default {
         })
           .then(res => res.json())
           .then(data => {
-            if (!data) {
+            console.log(data);
+            if (!data || typeof data !== "object") {
               console.log("Authentication Failed");
+              this.isAuth = true;
             } else {
               this.$root.$emit("authenticated", true);
-              this.$router.replace({ name: "parents" });
+              //! AUTH
+              auth.login(this.input.username, this.input.password, loggedIn => {
+                if (!loggedIn) {
+                  this.error = true;
+                } else {
+                  console.log("localStorage.token is: ", localStorage.token);
+                }
+              });
+              //! AUTH end
+              this.$router.replace({ name: "profiles" });
             }
           })
           .catch(function(error) {
