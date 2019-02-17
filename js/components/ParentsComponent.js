@@ -2,7 +2,7 @@ import HeaderComponent from "./layout/HeaderComponent";
 
 export default {
   template: `
-  <section id="parents" >
+  <section id="parents">
 
   <HeaderComponent />
 
@@ -46,6 +46,7 @@ export default {
     },
 
     logout() {
+      this.$root.$emit("authenticated", true);
       this.$router.replace({ name: "home" });
     }
   },

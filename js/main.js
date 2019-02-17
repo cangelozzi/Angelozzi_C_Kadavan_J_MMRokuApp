@@ -1,10 +1,12 @@
 import HomeComponent from "./components/HomeComponent.js";
 import ParentsComponent from "./components/ParentsComponent.js";
+import ProfilesComponent from "./components/layout/ProfilesComponent";
 
 const routes = [
   // { path: '/', redirect: { name: "login" } },
   { path: "/", name: "home", component: HomeComponent },
-  { path: "/parents", name: "parents", component: ParentsComponent }
+  { path: "/parents", name: "parents", component: ParentsComponent },
+  { path: "/profiles", name: "profiles", component: ProfilesComponent }
 ];
 
 const router = new VueRouter({

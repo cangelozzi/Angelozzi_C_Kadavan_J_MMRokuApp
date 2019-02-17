@@ -16,6 +16,8 @@ export default {
                 <li class="navigation__item" v-for="item in navlist">
                         <a :href="'#'+item" class="navigation__link">{{ item }}</a>
                       </li>
+                      <li  @click.prevent="openLogin()" class="navigation__item"><a href="" class="navigation__link">Login</a></li>
+                      <li @click.prevent='logout()' class="navigation__item"><a href="" class="navigation__link">Logout</a></li>
                 <ul id="social">
                   <li>
                             <a href="http://www.twitter.com" target="_blank" id="tw"
@@ -38,5 +40,21 @@ export default {
             </nav>
           </div>
         </div>
-    `
+    `,
+
+  data() {
+    return {};
+  },
+
+  methods: {
+    logout() {
+      this.$root.$emit("authenticated", true);
+      this.$router.replace({ name: "home" });
+      delete localStorage.token;
+      console.log("localStorage.token is: ", localStorage.token);
+    },
+    openLogin() {
+      this.$root.$emit("loginShow", true);
+    }
+  }
 };

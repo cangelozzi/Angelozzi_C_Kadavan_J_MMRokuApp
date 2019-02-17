@@ -1,7 +1,8 @@
 #selection {
   display: flex;
   justify-content: space-around;
-  margin-top: 3.6rem;
+  margin-top: 6.4rem;
+  margin-left: -28px;
 
   // tablet size media queries at 760px
   @media screen and (min-width: 760px) {
@@ -11,8 +12,8 @@
   // desktop size media queries at 1200px
   @media screen and (min-width: 1200px) {
     margin-bottom: 6rem;
-    margin-left: 27rem;
-    justify-content: normal;
+    margin-left: -6rem;
+    justify-content: space-around;
   }
 }
 

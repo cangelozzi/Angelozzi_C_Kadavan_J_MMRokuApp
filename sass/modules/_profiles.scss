@@ -1,40 +1,44 @@
-#profiles {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 3.6rem;
-  margin-bottom: 1.6rem;
-  color: $dark-purple;
-  text-transform: uppercase;
+#profilesBox {
+  margin-top: 10rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  grid-gap: 6rem;
 
-  // desktop size media queries at 1200px
-  @media screen and (min-width: 1200px) {
-    margin-top: -11rem;
-    position: absolute;
-    left: 102rem;
-  }
-}
-
-#parentsIcon {
-  margin-right: 12rem;
-  // desktop size media queries at 1200px
-  @media screen and (min-width: 1200px) {
-    margin-right: 3rem;
-  }
-}
-
-#kidsIcon {
-  margin-left: 2rem;
-}
-
-#parentsZone,
-#kidsZone {
-  display: inline;
-}
-
-#parentsIcon,
-#kidsIcon {
   // tablet size media queries at 760px
   @media screen and (min-width: 760px) {
-    width: 6rem;
+    margin-top: 11rem;
+  }
+
+  // desktop size media queries at 1200px
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  img {
+    width: 8rem;
+
+    // tablet size media queries at 760px
+    @media screen and (min-width: 760px) {
+      margin-top: 11rem;
+      width: 11rem;
+    }
+  }
+
+  p {
+    color: $light-grey;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+}
+
+.singleuser {
+  cursor: pointer;
+  img {
+    opacity: 0.4;
+    &:hover {
+      opacity: 1;
+    }
   }
 }

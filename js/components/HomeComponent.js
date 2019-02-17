@@ -1,15 +1,13 @@
 import HeaderComponent from "./layout/HeaderComponent";
 import SelectionComponent from "./layout/SelectionComponent";
-import ProfilesComponent from "./layout/ProfilesComponent";
 import HeroComponent from "./layout/HeroComponent";
 import FooterComponent from "./layout/FooterComponent";
 
 export default {
   template: `
     <section>
-      <HeaderComponent /> 
+      <HeaderComponent />
       <SelectionComponent />
-      <ProfilesComponent />
       <HeroComponent />
       <FooterComponent />
     </section>
@@ -24,7 +22,6 @@ export default {
   components: {
     HeaderComponent,
     SelectionComponent,
-    ProfilesComponent,
     HeroComponent,
     FooterComponent
   }
