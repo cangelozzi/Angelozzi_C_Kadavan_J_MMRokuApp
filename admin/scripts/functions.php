@@ -41,6 +41,23 @@
 
   }
 
+  //! Get Single User
+  function get_user($user) {
+    include('connect.php');
+    $user_query = "SELECT * FROM tbl_user WHERE `user_active` = true AND `username` = :user";
+
+    $get_user = $pdo->prepare($user_query);
+    $get_user->execute(
+      array (
+        ':user' => $user
+      )
+    );
+
+    $user = $get_user->fetch(PDO::FETCH_ASSOC);
+
+    return $user;
+  }
+
 //   //! Create User
 //   	function createUser($fname,$username,$password,$email){
 // 		include('connect.php');

@@ -23,5 +23,5 @@ country, jazz, classical, etc...), cartoons, live action, anime, etc.
 
 ###### Under Construction, due 2019
 
-- https://glidejs.com
-- https://marketplace.visualstudio.com/items?itemName=pushqrdx.inline-html
+- https://stackoverflow.com/questions/35038857/setting-query-string-using-fetch-get-request
+- https://vuetifyjs.com/en/components/carousels
