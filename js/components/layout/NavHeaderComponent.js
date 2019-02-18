@@ -50,7 +50,7 @@ export default {
     logout() {
       this.$root.$emit("authenticated", true);
       this.$router.replace({ name: "home" });
-      delete localStorage.token;
+      localStorage.clear();
       console.log("localStorage.token is: ", localStorage.token);
     },
     openLogin() {

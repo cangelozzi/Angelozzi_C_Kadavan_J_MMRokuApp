@@ -1,12 +1,18 @@
 import HomeComponent from "./components/HomeComponent.js";
-import ParentsComponent from "./components/ParentsComponent.js";
-import ProfilesComponent from "./components/layout/ProfilesComponent";
+import UsersComponent from "./components/layout/UsersComponent";
+import UserDetailComponent from "./components/layout/UserDetailComponent";
 
 const routes = [
   // { path: '/', redirect: { name: "login" } },
   { path: "/", name: "home", component: HomeComponent },
-  { path: "/parents", name: "parents", component: ParentsComponent },
-  { path: "/profiles", name: "profiles", component: ProfilesComponent }
+  // { path: "/parents", name: "parents", component: ParentsComponent },
+  { path: "/users", name: "users", component: UsersComponent },
+  {
+    path: "/users/:id",
+    name: "usersdetails",
+    props: true,
+    component: UserDetailComponent
+  }
 ];
 
 const router = new VueRouter({
@@ -51,12 +57,12 @@ const vm = new Vue({
 }).$mount("#app");
 
 //! ---------- redirect if not authenticated --------------
-router.beforeEach((to, from, next) => {
-  console.log(vm.authenticated);
+// router.beforeEach((to, from, next) => {
+//   console.log(vm.authenticated);
 
-  if (!vm.authenticated) {
-    next("/");
-  } else {
-    next();
-  }
-});
+//   if (!vm.authenticated) {
+//     next("/");
+//   } else {
+//     next();
+//   }
+// });

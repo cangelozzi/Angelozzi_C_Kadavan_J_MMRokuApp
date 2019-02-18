@@ -5,19 +5,25 @@ export default {
       <HeaderComponent />
 
       <div id="profilesBox">
-      <div class="allusers" v-for="user in users">
-        <div class="singleuser">
-        <img :src="'images/icons/'+user.user_img" alt="users icon profile">
-        <p>{{ user.user_name }}</p>
-          </div>
-        </div>
+        <ul class="allusers" v-for="user in users">
+          <router-link
+            tag="li"
+            :to="'/users/'+user.username"
+            class="singleuser"
+            style="cursor: pointer">
+            <img :src="'images/icons/'+user.user_img" alt="users icon profile">
+          </router-link>
+          <p>{{ user.user_name }}</p>
+        </ul>
       </div>
+      <i id="settings" class="fas fa-cog"></i>
     </section>
   `,
 
   data() {
     return {
-      users: []
+      users: [],
+      user: ""
     };
   },
 

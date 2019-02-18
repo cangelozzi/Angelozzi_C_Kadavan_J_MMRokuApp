@@ -55,7 +55,7 @@ export default {
                 }
               });
               //! AUTH end
-              this.$router.replace({ name: "profiles" });
+              this.$router.replace({ name: "users" });
             }
           })
           .catch(function(error) {

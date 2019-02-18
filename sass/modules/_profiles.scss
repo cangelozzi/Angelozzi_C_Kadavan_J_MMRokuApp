@@ -35,10 +35,21 @@
 
 .singleuser {
   cursor: pointer;
+  list-style: none;
   img {
     opacity: 0.4;
     &:hover {
       opacity: 1;
     }
   }
+}
+
+#settings {
+  color: $light-grey;
+  font-size: 4rem;
+  position: absolute;
+  right: 10rem;
+  bottom: 8rem;
+  animation: rotate 6s;
+  animation-iteration-count: 1;
 }
