@@ -4,6 +4,8 @@ export default {
   <section id="profiles" data-palette='0'>
       <HeaderComponent />
 
+      <h1 class="profileTitle">Who is having fun today?</h1>
+
       <div id="profilesBox">
         <ul class="allusers" v-for="user in users">
           <router-link
