@@ -12,7 +12,7 @@ export default {
         <h1 class="welcomeTag">Movies inspiration for today?</h1>
       </div>
 
-      <MovieComponent />
+      <MovieComponent  />
 
     </section>
   `,
@@ -25,7 +25,6 @@ export default {
 
   created: function() {
     this.fetchUser();
-    localStorage.setItem("user_logged", this.$route.params.id);
     console.log(
       "LocalStorage User Logged is: " + localStorage.getItem("user_logged")
     );
@@ -47,6 +46,8 @@ export default {
         .then(data => {
           console.log(data);
           this.user = data;
+          localStorage.setItem("user_logged", this.user.username);
+          localStorage.setItem("user_access", this.user.user_access);
         })
         .catch(function(error) {
           console.log(error);
