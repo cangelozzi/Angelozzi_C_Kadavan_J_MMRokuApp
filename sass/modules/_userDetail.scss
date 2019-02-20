@@ -1,27 +1,36 @@
 #welcome {
-  margin-left: -30rem;
+  margin-left: 0;
   margin-top: 18rem;
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 
-.welcomeTag {
-  color: $light-grey;
-  margin-bottom: 2rem;
-}
+// desktop size media queries at 1200px
+@media screen and (min-width: 1200px) {
+  #welcome {
+    margin-left: -30rem;
+    margin-top: 18rem;
+    font-size: 3rem;
+  }
 
-#firstTag {
-  display: inline;
-  margin-right: 2rem;
-}
+  .welcomeTag {
+    color: $light-grey;
+    margin-bottom: 2rem;
+  }
 
-#mylist {
-  color: $light-purple;
-  margin-left: 1rem;
-  margin-top: 6.9rem;
-  font-size: 3rem;
-  margin-bottom: 5.4rem;
-}
+  #firstTag {
+    display: inline;
+    margin-right: 2rem;
+  }
 
-#userIcon {
-  display: inline;
+  #mylist {
+    color: $light-purple;
+    margin-left: 1rem;
+    margin-top: 6.9rem;
+    font-size: 3rem;
+    margin-bottom: 5.4rem;
+  }
+
+  #userIcon {
+    display: inline;
+  }
 }
