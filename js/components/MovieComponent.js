@@ -42,22 +42,24 @@ export default {
             </v-card>
           </v-flex>
 
-          <v-flex xs12>
-            <v-card color="cyan darken-2" class="white--text">
-              <v-layout>
-                <v-flex xs5>
+          <v-flex xs12 v-if="myList.length">
+            <v-card color="cyan darken-2" class="white--text" v-if="myList.length">
+              <v-layout v-if="myList.length">
+                <v-flex xs5 v-if="myList.length">
                   <v-img
                     v-if="myList.length"
                     :src="'images/movie/' + myList[0].movie_img">
 
                   ></v-img>
                 </v-flex>
-                <v-flex xs7>
-                  <v-card-title primary-title>
+                <v-flex xs7 v-if="myList.length">
+                  <v-card-title primary-title v-if="myList.length">
                     <div>
                       <div v-if="myList.length" class="headline">{{myList[0].movie_title}}</div>
+                      <p v-else> loading.....</p>
                       <div v-if="myList.length" style="font-size: 1.4rem;">{{myList[0].movie_desc}}</div>
                       <div v-if="myList.length">{{myList[0].movie_year}}</div>
+                      <p v-else> loading.....</p>
                     </div>
                   </v-card-title>
                 </v-flex>
@@ -66,24 +68,29 @@ export default {
               <v-card-actions class="pa-3">
                 Rate this movie
                 <v-spacer></v-spacer>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
+                <div class="text-xs-center">
+                  <v-rating
+                    v-model="rating1"
+                    background-color="$dark-purple"
+                    color="orange"
+                    medium
+                  ></v-rating>
+                </div>
               </v-card-actions>
             </v-card>
           </v-flex>
 
-          <v-flex xs12>
-            <v-card color="purple" class="white--text">
-              <v-layout row>
-                <v-flex xs7>
-                  <v-card-title primary-title>
+          <v-flex xs12 v-if="myList.length">
+            <v-card color="purple" class="white--text" v-if="myList.length">
+              <v-layout row v-if="myList.length">
+                <v-flex xs7 v-if="myList.length">
+                  <v-card-title primary-title v-if="myList.length">
                     <div>
                       <div v-if="myList.length" class="headline">{{myList[1].movie_title}}</div>
+                      <p v-else> loading.....</p>
                       <div v-if="myList.length" style="font-size: 1.4rem;">{{myList[1].movie_desc}}</div>
                       <div v-if="myList.length">{{myList[1].movie_year}}</div>
+                      <p v-else> loading.....</p>
                     </div>
                   </v-card-title>
                 </v-flex>
@@ -92,34 +99,35 @@ export default {
                   v-if="myList.length"
                     :src="'images/movie/' + myList[1].movie_img">
 
-                  ></v-img>
+                  </v-img>
                 </v-flex>
               </v-layout>
               <v-divider light></v-divider>
               <v-card-actions class="pa-3">
                 Rate this movie
                 <v-spacer></v-spacer>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
+                <v-rating
+                    v-model="rating2"
+                    background-color="$dark-purple"
+                    color="orange"
+                    medium
+                  ></v-rating>
               </v-card-actions>
             </v-card>
           </v-flex>
 
-          <v-flex xs12>
-            <v-card color="cyan darken-2" class="white--text">
-              <v-layout>
+          <v-flex xs12 v-if="myList.length">
+            <v-card color="cyan darken-2" class="white--text" v-if="myList.length">
+              <v-layout v-if="myList.length">
                 <v-flex xs5>
                   <v-img
                   v-if="myList.length"
                     :src="'images/movie/' + myList[2].movie_img">
 
-                  ></v-img>
+                  </v-img>
                 </v-flex>
                 <v-flex xs7>
-                  <v-card-title primary-title>
+                  <v-card-title primary-title v-if="myList.length">
                     <div>
                       <div v-if="myList.length" class="headline">{{myList[2].movie_title}}</div>
                       <div v-if="myList.length" style="font-size: 1.4rem;">{{myList[2].movie_desc}}</div>
@@ -132,20 +140,21 @@ export default {
               <v-card-actions class="pa-3">
                 Rate this movie
                 <v-spacer></v-spacer>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
+                <v-rating
+                    v-model="rating3"
+                    background-color="$dark-purple"
+                    color="orange"
+                    medium
+                  ></v-rating>
               </v-card-actions>
             </v-card>
           </v-flex>
 
-          <v-flex xs12>
-            <v-card color="purple" class="white--text">
-              <v-layout row>
-                <v-flex xs7>
-                  <v-card-title primary-title>
+          <v-flex xs12 v-if="myList.length">
+            <v-card color="purple" class="white--text" v-if="myList.length">
+              <v-layout row v-if="myList.length">
+                <v-flex xs7 v-if="myList.length">
+                  <v-card-title primary-title v-if="myList.length">
                     <div>
                       <div v-if="myList.length" class="headline">{{myList[3].movie_title}}</div>
                       <div v-if="myList.length" style="font-size: 1.4rem;">{{myList[3].movie_desc}}</div>
@@ -165,11 +174,12 @@ export default {
               <v-card-actions class="pa-3">
                 Rate this movie
                 <v-spacer></v-spacer>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
+                <v-rating
+                    v-model="rating4"
+                    background-color="$dark-purple"
+                    color="orange"
+                    medium
+                  ></v-rating>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -209,18 +219,18 @@ export default {
             </v-card>
           </v-flex>
 
-          <v-flex xs12>
-            <v-card color="cyan darken-2" class="white--text">
-              <v-layout>
-                <v-flex xs5>
+          <v-flex xs12 v-if="myPopular.length">
+            <v-card color="cyan darken-2" class="white--text" v-if="myPopular.length">
+              <v-layout v-if="myPopular.length">
+                <v-flex xs5 v-if="myPopular.length">
                   <v-img
                   v-if="myPopular.length"
                     :src="'images/movie/' + myPopular[0].movie_img">
 
                   ></v-img>
                 </v-flex>
-                <v-flex xs7>
-                  <v-card-title primary-title>
+                <v-flex xs7 v-if="myPopular.length">
+                  <v-card-title primary-title v-if="myPopular.length">
                     <div>
                       <div v-if="myPopular.length" class="headline">{{myPopular[0].movie_title}}</div>
                       <div v-if="myPopular.length" style="font-size: 1.4rem;">{{myPopular[0].movie_desc}}</div>
@@ -230,23 +240,24 @@ export default {
                 </v-flex>
               </v-layout>
               <v-divider light></v-divider>
-              <v-card-actions class="pa-3">
+              <v-card-actions class="pa-3" v-if="myPopular.length">
                 Rate this movie
                 <v-spacer></v-spacer>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
+                <v-rating
+                    v-model="rating5"
+                    background-color="$dark-purple"
+                    color="orange"
+                    medium
+                  ></v-rating>
               </v-card-actions>
             </v-card>
           </v-flex>
 
-          <v-flex xs12>
-            <v-card color="purple" class="white--text">
-              <v-layout row>
-                <v-flex xs7>
-                  <v-card-title primary-title>
+          <v-flex xs12 v-if="myPopular.length">
+            <v-card color="purple" class="white--text" v-if="myPopular.length">
+              <v-layout row v-if="myPopular.length">
+                <v-flex xs7 v-if="myPopular.length">
+                  <v-card-title primary-title v-if="myPopular.length">
                     <div>
                       <div v-if="myPopular.length" class="headline">{{myPopular[1].movie_title}}</div>
                       <div v-if="myPopular.length" style="font-size: 1.4rem;">{{myPopular[1].movie_desc}}</div>
@@ -266,19 +277,20 @@ export default {
               <v-card-actions class="pa-3">
                 Rate this movie
                 <v-spacer></v-spacer>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
+                <v-rating
+                    v-model="rating6"
+                    background-color="$dark-purple"
+                    color="orange"
+                    medium
+                  ></v-rating>
               </v-card-actions>
             </v-card>
           </v-flex>
 
-          <v-flex xs12>
-            <v-card color="cyan darken-2" class="white--text">
+          <v-flex xs12 v-if="myPopular.length">
+            <v-card color="cyan darken-2" class="white--text" v-if="myPopular.length">
               <v-layout>
-                <v-flex xs5>
+                <v-flex xs5 v-if="myPopular.length">
                   <v-img
                   v-if="myPopular.length"
                     :src="'images/movie/' + myPopular[2].movie_img">
@@ -286,7 +298,7 @@ export default {
                   ></v-img>
                 </v-flex>
                 <v-flex xs7>
-                  <v-card-title primary-title>
+                  <v-card-title primary-title v-if="myPopular.length">
                     <div>
                       <div v-if="myPopular.length" class="headline">{{myPopular[2].movie_title}}</div>
                       <div v-if="myPopular.length" style="font-size: 1.4rem;">{{myPopular[2].movie_desc}}</div>
@@ -299,28 +311,29 @@ export default {
               <v-card-actions class="pa-3">
                 Rate this movie
                 <v-spacer></v-spacer>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
+                <v-rating
+                    v-model="rating7"
+                    background-color="$dark-purple"
+                    color="orange"
+                    medium
+                  ></v-rating>
               </v-card-actions>
             </v-card>
           </v-flex>
 
-          <v-flex xs12>
-            <v-card color="purple" class="white--text">
-              <v-layout row>
-                <v-flex xs7>
-                  <v-card-title primary-title>
-                    <div>
+          <v-flex xs12 v-if="myPopular.length">
+            <v-card color="purple" class="white--text" v-if="myPopular.length">
+              <v-layout row v-if="myPopular.length">
+                <v-flex xs7 v-if="myPopular.length">
+                  <v-card-title primary-title v-if="myPopular.length">
+                    <div v-if="myPopular.length">
                       <div v-if="myPopular.length" class="headline">{{myPopular[3].movie_title}}</div>
                       <div v-if="myPopular.length" style="font-size: 1.4rem;">{{myPopular[3].movie_desc}}</div>
                       <div v-if="myPopular.length">{{myPopular[3].movie_year}}</div>
                     </div>
                   </v-card-title>
                 </v-flex>
-                <v-flex xs5>
+                <v-flex xs5 v-if="myPopular.length">
                   <v-img
                     v-if="myPopular.length"
                     :src="'images/movie/' + myPopular[3].movie_img">
@@ -332,11 +345,12 @@ export default {
               <v-card-actions class="pa-3">
                 Rate this movie
                 <v-spacer></v-spacer>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
+                <v-rating
+                    v-model="rating8"
+                    background-color="$dark-purple"
+                    color="orange"
+                    medium
+                  ></v-rating>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -356,7 +370,15 @@ export default {
       movieSuggestions: [],
       user: "",
       myList: [],
-      myPopular: []
+      myPopular: [],
+      rating1: 0,
+      rating2: 0,
+      rating3: 0,
+      rating4: 0,
+      rating5: 0,
+      rating6: 0,
+      rating7: 0,
+      rating8: 0
     };
   },
 
