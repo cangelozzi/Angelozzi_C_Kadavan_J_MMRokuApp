@@ -18,6 +18,16 @@
   top: 8rem;
 }
 
+.trailer {
+  color: $light-grey;
+  font-size: 1.6rem;
+  text-decoration: none;
+
+  &:hover {
+    color: $almost-black;
+  }
+}
+
 // desktop size media queries at 1200px
 @media screen and (min-width: 1200px) {
   #contentMovie {
@@ -45,7 +55,7 @@
 
   #contentFooter {
     position: absolute;
-    top: 260rem;
+    top: 290rem;
     width: 19%;
     left: 40%;
   }

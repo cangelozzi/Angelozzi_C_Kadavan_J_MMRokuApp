@@ -60,6 +60,7 @@ export default {
                       <div v-if="myList.length" style="font-size: 1.4rem;">{{myList[0].movie_desc}}</div>
                       <div v-if="myList.length">{{myList[0].movie_year}}</div>
                       <p v-else> loading.....</p>
+                      <a class="trailer" v-if="myList.length" :href="myList[0].movie_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
                     </div>
                   </v-card-title>
                 </v-flex>
@@ -91,6 +92,7 @@ export default {
                       <div v-if="myList.length" style="font-size: 1.4rem;">{{myList[1].movie_desc}}</div>
                       <div v-if="myList.length">{{myList[1].movie_year}}</div>
                       <p v-else> loading.....</p>
+                      <a class="trailer" v-if="myList.length" :href="myList[1].movie_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
                     </div>
                   </v-card-title>
                 </v-flex>
@@ -132,6 +134,7 @@ export default {
                       <div v-if="myList.length" class="headline">{{myList[2].movie_title}}</div>
                       <div v-if="myList.length" style="font-size: 1.4rem;">{{myList[2].movie_desc}}</div>
                       <div v-if="myList.length">{{myList[2].movie_year}}</div>
+                      <a class="trailer" v-if="myList.length" :href="myList[2].movie_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
                     </div>
                   </v-card-title>
                 </v-flex>
@@ -159,6 +162,7 @@ export default {
                       <div v-if="myList.length" class="headline">{{myList[3].movie_title}}</div>
                       <div v-if="myList.length" style="font-size: 1.4rem;">{{myList[3].movie_desc}}</div>
                       <div v-if="myList.length">{{myList[3].movie_year}}</div>
+                      <a class="trailer" v-if="myList.length" :href="myList[3].movie_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
                     </div>
                   </v-card-title>
                 </v-flex>
@@ -235,6 +239,7 @@ export default {
                       <div v-if="myPopular.length" class="headline">{{myPopular[0].movie_title}}</div>
                       <div v-if="myPopular.length" style="font-size: 1.4rem;">{{myPopular[0].movie_desc}}</div>
                       <div v-if="myPopular.length">{{myPopular[0].movie_year}}</div>
+                      <a class="trailer" v-if="myList.length" :href="myPopular[0].movie_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
                     </div>
                   </v-card-title>
                 </v-flex>
@@ -262,6 +267,7 @@ export default {
                       <div v-if="myPopular.length" class="headline">{{myPopular[1].movie_title}}</div>
                       <div v-if="myPopular.length" style="font-size: 1.4rem;">{{myPopular[1].movie_desc}}</div>
                       <div v-if="myPopular.length">{{myPopular[1].movie_year}}</div>
+                      <a class="trailer" v-if="myList.length" :href="myPopular[1].movie_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
                     </div>
                   </v-card-title>
                 </v-flex>
@@ -303,6 +309,7 @@ export default {
                       <div v-if="myPopular.length" class="headline">{{myPopular[2].movie_title}}</div>
                       <div v-if="myPopular.length" style="font-size: 1.4rem;">{{myPopular[2].movie_desc}}</div>
                       <div v-if="myPopular.length">{{myPopular[2].movie_year}}</div>
+                      <a class="trailer" v-if="myList.length" :href="myPopular[2].movie_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
                     </div>
                   </v-card-title>
                 </v-flex>
@@ -330,6 +337,7 @@ export default {
                       <div v-if="myPopular.length" class="headline">{{myPopular[3].movie_title}}</div>
                       <div v-if="myPopular.length" style="font-size: 1.4rem;">{{myPopular[3].movie_desc}}</div>
                       <div v-if="myPopular.length">{{myPopular[3].movie_year}}</div>
+                      <a class="trailer" v-if="myList.length" :href="myPopular[3].movie_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
                     </div>
                   </v-card-title>
                 </v-flex>
