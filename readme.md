@@ -25,3 +25,4 @@ country, jazz, classical, etc...), cartoons, live action, anime, etc.
 
 - https://stackoverflow.com/questions/35038857/setting-query-string-using-fetch-get-request
 - https://vuetifyjs.com/en/components/carousels
+- https://sorgalla.com/lity/
