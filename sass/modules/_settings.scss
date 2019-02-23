@@ -1,0 +1,24 @@
+.setTitle {
+  color: $light-grey;
+  font-size: 3rem;
+  font-weight: 200;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 5rem;
+}
+
+#bckbtn {
+  position: relative;
+  left: 39%;
+  top: 6%;
+}
+
+#savebtn {
+  position: relative;
+  left: 46%;
+}

@@ -36,8 +36,10 @@
 .singleuser {
   cursor: pointer;
   list-style: none;
+
   img {
     opacity: 0.4;
+
     &:hover {
       opacity: 1;
     }
@@ -60,4 +62,12 @@
   text-align: center;
   margin-top: 8rem;
   margin-bottom: -12rem;
+}
+
+.usersSettings {
+  color: $light-grey;
+  font-size: 3rem;
+  position: absolute;
+  right: 16rem;
+  bottom: 6.4rem;
 }

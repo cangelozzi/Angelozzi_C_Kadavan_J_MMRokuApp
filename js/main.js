@@ -1,18 +1,33 @@
 import HomeComponent from "./components/HomeComponent.js";
 import UsersComponent from "./components/layout/UsersComponent";
 import UserDetailComponent from "./components/layout/UserDetailComponent";
+import SettingsComponent from "./components/layout/SettingsComponent";
 
 const routes = [
   // { path: '/', redirect: { name: "login" } },
-  { path: "/", name: "home", component: HomeComponent },
-  // { path: "/parents", name: "parents", component: ParentsComponent },
-  { path: "/users", name: "users", component: UsersComponent },
+  {
+    path: "/",
+    name: "home",
+    component: HomeComponent
+  },
+  {
+    path: "/users",
+    name: "users",
+    component: UsersComponent,
+    props: true
+  },
   {
     path: "/users/:id",
     name: "usersdetails",
     props: true,
     component: UserDetailComponent
-  }
+  },
+  {
+    path: "/settings",
+    name: "settings",
+    component: SettingsComponent,
+    props: true
+  },
 ];
 
 const router = new VueRouter({
@@ -27,7 +42,7 @@ const vm = new Vue({
     authenticated: false
   },
 
-  created: function() {},
+  created: function () {},
 
   mounted() {
     this.$root.$on("authenticated", data => {
@@ -45,10 +60,12 @@ const vm = new Vue({
     },
 
     startGlider() {
-      window.addEventListener("load", function() {
+      window.addEventListener("load", function () {
         document
           .querySelector(".glider")
-          .Glider({ "setting-name": "setting-value" });
+          .Glider({
+            "setting-name": "setting-value"
+          });
       });
     }
   },
