@@ -58,28 +58,24 @@
     return $user;
   }
 
-//   //! Create User
-//   	function createUser($fname,$username,$password,$email){
-// 		include('connect.php');
+//! Update user access
+function update_user_access($data) {
 
-// 		$create_user_query = 'INSERT INTO tbl_user(`user_name`,`username`,`password`,user_email)';
-// 		$create_user_query .= ' VALUES(:fname,:username,:password,:email)';
+  include('connect.php');
 
-// 		$create_user_set = $pdo->prepare($create_user_query);
-// 		$create_user_set->execute(
-// 			array(
-// 				':fname'=>$fname,
-// 				':username'=>$username,
-// 				':password'=>$password,
-// 				':email'=>$email
-// 			)
-// 		);
+  foreach ($data as $key) {
 
-// 		if($create_user_set->rowCount()){
-// 			redirect_to('index.php');
-// 		}else{
-// 			$message = 'Something went wrong. Try again.';
-// 			return $message;
-// 		}
+    $update_user_query = "UPDATE `tbl_user` SET `user_admin` = :admin, `user_access` = :access, `user_active` = :active WHERE `username` = :username;";
 
-// }
+    $update_user_set = $pdo->prepare($update_user_query);
+    $update_user_set->execute(
+      array (
+        ':admin' => $key->user_admin,
+        ':access' => $key->user_access,
+        ':active' => $key->user_active,
+        ':username' => $key->username,
+      )
+    );
+  }
+
+}
