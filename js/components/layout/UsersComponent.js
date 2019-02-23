@@ -18,20 +18,27 @@ export default {
           <p>{{ user.user_name }}</p>
         </ul>
       </div>
-      <i id="settings" class="fas fa-cog"></i>
+      <router-link
+        :to="{name:'settings', params:{ users } }"
+        style="cursor: pointer" >
+        <p class="usersSettings">Settings</p>
+        <i v-if="isAdmin" id="settings" class="fas fa-cog"></i>
+      </router-link>
     </section>
   `,
 
   data() {
     return {
       users: [],
-      user: ""
+      user: "",
+      isAdmin: false
     };
   },
 
-  created: function() {
+  created: function () {
     this.$root.$emit("showbtn", true);
     this.fetchUsers();
+    this.isUserAdmin();
   },
 
   methods: {
@@ -44,10 +51,17 @@ export default {
           console.log(data);
           this.users = data;
         })
-        .catch(function(error) {
+        .catch(function (error) {
           console.log(error);
         });
+    },
+
+    isUserAdmin() {
+      if (Number(localStorage.getItem("admin"))) {
+        this.isAdmin = true;
+      }
     }
+
   },
 
   components: {

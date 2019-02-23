@@ -35,9 +35,9 @@ export default {
         let url = `./admin/admin_login.php`;
 
         fetch(url, {
-          method: "POST",
-          body: formData
-        })
+            method: "POST",
+            body: formData
+          })
           .then(res => res.json())
           .then(data => {
             console.log(data);
@@ -52,13 +52,17 @@ export default {
                   this.error = true;
                 } else {
                   console.log("localStorage.token is: ", localStorage.token);
+                  // Save data to the current local store if Logged user is Admin
+                  localStorage.setItem("admin", data.admin);
                 }
               });
               //! AUTH end
-              this.$router.replace({ name: "users" });
+              this.$router.replace({
+                name: "users"
+              });
             }
           })
-          .catch(function(error) {
+          .catch(function (error) {
             console.error(error);
           });
       } else {
