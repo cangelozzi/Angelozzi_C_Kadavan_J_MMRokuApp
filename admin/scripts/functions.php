@@ -25,6 +25,40 @@
     return $movies;
   }
 
+  //! Fetch all tv shows to Frontend
+  function get_tvshows() {
+    include('connect.php');
+
+    $tv_query = "SELECT t.*, c.`cat_name` FROM tbl_tv t INNER JOIN tbl_tv_cat l INNER JOIN tbl_category c ON t.`tv_id` = l.`tv_id` AND l.`cat_id` = c.`cat_id`  ORDER BY t.`tv_year` DESC LIMIT 40;";
+
+    $get_tv = $pdo->prepare($tv_query);
+    $get_tv->execute();
+
+    $tvshows = [];
+
+    while($row = $get_tv->fetch(PDO::FETCH_ASSOC)) {
+      $tvshows[] = $row;
+    }
+    return $tvshows;
+  }
+
+  //! Fetch all music to Frontend
+  function get_music() {
+    include('connect.php');
+
+    $tv_query = "SELECT m.*, c.`cat_name` FROM tbl_music m INNER JOIN tbl_mus_cat l INNER JOIN tbl_category c ON m.`music_id` = l.`music_id` AND l.`cat_id` = c.`cat_id`  ORDER BY m.`music_year` DESC LIMIT 40;";
+
+    $get_tv = $pdo->prepare($tv_query);
+    $get_tv->execute();
+
+    $tvshows = [];
+
+    while($row = $get_tv->fetch(PDO::FETCH_ASSOC)) {
+      $tvshows[] = $row;
+    }
+    return $tvshows;
+  }
+
   //! Fetch all users to Frontend
   function get_all_users() {
     include('connect.php');
