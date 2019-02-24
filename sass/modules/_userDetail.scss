@@ -4,6 +4,10 @@
   font-size: 1.5rem;
 }
 
+.isSelected {
+  background-color: aliceblue !important;
+}
+
 // desktop size media queries at 1200px
 @media screen and (min-width: 1200px) {
   #welcome {
@@ -32,5 +36,18 @@
 
   #userIcon {
     display: inline;
+  }
+
+  .contentBtn {
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+  #downArrow {
+    color: $light-grey;
+    font-size: 2rem;
+    position: relative;
+    top: 16rem;
+    left: 50%;
   }
 }
