@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Feb 01, 2019 at 06:05 PM
--- Server version: 5.7.21
+-- Host: 127.0.0.1
+-- Generation Time: Mar 06, 2019 at 04:19 PM
+-- Server version: 5.7.24
 -- PHP Version: 7.1.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -28,12 +28,10 @@ SET time_zone = "+00:00";
 -- Table structure for table `tbl_category`
 --
 
-DROP TABLE IF EXISTS `tbl_category`;
-CREATE TABLE IF NOT EXISTS `tbl_category` (
-  `cat_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `cat_name` varchar(80) NOT NULL,
-  PRIMARY KEY (`cat_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+CREATE TABLE `tbl_category` (
+  `cat_id` tinyint(3) UNSIGNED NOT NULL,
+  `cat_name` varchar(80) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_category`
@@ -77,18 +75,16 @@ INSERT INTO `tbl_category` (`cat_id`, `cat_name`) VALUES
 -- Table structure for table `tbl_movie`
 --
 
-DROP TABLE IF EXISTS `tbl_movie`;
-CREATE TABLE IF NOT EXISTS `tbl_movie` (
-  `movie_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_movie` (
+  `movie_id` smallint(5) UNSIGNED NOT NULL,
   `movie_title` varchar(180) NOT NULL,
   `movie_desc` varchar(255) NOT NULL,
   `movie_year` year(4) NOT NULL,
   `movie_img` varchar(255) NOT NULL,
   `movie_certificate` varchar(80) NOT NULL,
   `movie_switch` tinyint(1) NOT NULL DEFAULT '1',
-  `movie_link` varchar(255) NOT NULL,
-  PRIMARY KEY (`movie_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
+  `movie_link` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_movie`
@@ -107,20 +103,20 @@ INSERT INTO `tbl_movie` (`movie_id`, `movie_title`, `movie_desc`, `movie_year`, 
 (10, 'The Beatles', 'The musical adventures of the greatest of the Rock Bands.', 1965, 'beatles_anim.jpg', 'G', 1, 'https://www.youtube.com/watch?v=mdyY7SLh6c4'),
 (11, 'The Trap', 'A fur trapper takes a mute girl as his unwilling wife to live with him in his remote cabin in the woods.', 1967, 'the_trap.jpg', '18A', 1, 'https://www.youtube.com/watch?v=OlWjhKaehSk'),
 (12, 'Capitan America', 'The patriotic sole recipient of a revolutionary body enhancement project battles evil as the star spangled defender of America.', 1966, 'capitan_america.jpg', 'G', 1, 'https://www.youtube.com/watch?v=sFxlaWO0erk'),
-(13, 'Hulk', 'The adventures of a nuclear scientist cursed with the tendency to turning into a huge green brute under stress.', 1966, 'hulk.jpg', 'G', 1, 'https://www.youtube.com/watch?v=b9u7GjNkp5Y'),
+(13, 'Hulk', 'The adventures of a nuclear scientist cursed with the tendency to turning into a huge green brute under stress.', 1966, 'hulk.jpg', '14A', 1, 'https://www.youtube.com/watch?v=b9u7GjNkp5Y'),
 (14, 'That Cold Day in the Park', 'A rich but lonely woman, Frances Austen, one day invites a homeless young man from a nearby park to her apartment and offers to let him live there. However, she has no intention of ever letting him leave again.', 1969, 'cold_day_park.jpg', 'R', 1, 'https://www.youtube.com/watch?v=6VGGjPSh7Yw'),
 (15, 'The Incredible Journey', 'The story of three pets, a cat and two dogs, who lose their owners when they are all on vacation. Can they find their way home?', 1963, 'incredible_journey.jpg', 'R18A', 1, 'https://www.youtube.com/watch?v=WKJChEYLVaU'),
 (16, 'The Fox', 'Based on D.H. Lawrence\'s novella about two young women - sickly, chattering Jill Banford and quiet, strong Ellen March - who are trying, hopelessly, to run a chicken farm in Canada.', 1968, 'the_fox.jpg', 'R', 1, 'https://www.youtube.com/watch?v=DYiU7hceyqw'),
 (17, 'The Mask', 'A young archaeologist believes he is cursed by a mask that causes him to have weird nightmares and possibly to murder. Before committing suicide, he mails the mask to his psychiatrist, Dr. Barnes, who is soon plunged into the nightmare world of the mask.', 1961, 'the_mask.jpg', 'R', 1, 'https://www.youtube.com/watch?v=oJigBoo4DxY'),
 (18, 'Superman', 'An alien orphan is sent from his dying planet to Earth, where he grows up to become his adoptive home\'s first and greatest superhero.', 1978, 'superman.jpg', 'G', 1, 'https://www.youtube.com/watch?v=394jYH82s2o'),
-(19, 'Starship Invasion', 'An advance team from a dying, far-off civilization seeks a new world to conquer and inhabit -- Earth.', 1977, 'starship_invasion.jpg', 'G', 1, 'https://www.youtube.com/watch?v=QESnwxRUxyw'),
+(19, 'Starship Invasion', 'An advance team from a dying, far-off civilization seeks a new world to conquer and inhabit -- Earth.', 1977, 'starship_invasion.jpg', 'R', 1, 'https://www.youtube.com/watch?v=QESnwxRUxyw'),
 (20, 'The Godfather', 'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.', 1972, 'godfather.jpg', 'R', 1, 'https://www.youtube.com/watch?v=fB_8VCwXydM'),
 (21, 'Jaws', 'When a killer shark unleashes chaos on a beach resort, it\'s up to a local sheriff, a marine biologist, and an old seafarer to hunt the beast down.', 1975, 'jaws.jpg', 'R', 1, 'https://www.youtube.com/watch?v=U1fu_sA7XhE'),
 (22, 'Star Wars: Episode IV - A New Hope', 'Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire\'s world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.', 1977, 'sw_1977.jpg', 'G', 1, 'https://www.youtube.com/watch?v=XHk5kCIiGoM'),
 (23, 'A Clockwork Orange', 'In the future, a sadistic gang leader is imprisoned and volunteers for a conduct-aversion experiment, but it doesn\'t go as planned.', 1971, 'cloackwork_orange.jpg', 'R', 1, 'https://www.youtube.com/watch?v=xHFPi_3kc1U'),
-(24, 'Close Encounters of the Third Kind', 'Roy Neary, an electric lineman, watches how his quiet and ordinary daily life turns upside down after a close encounter with a UFO.', 1977, 'close_encounters.jpg', 'G', 1, 'https://www.youtube.com/watch?v=Fxp32VHaYdE'),
+(24, 'Close Encounters of the Third Kind', 'Roy Neary, an electric lineman, watches how his quiet and ordinary daily life turns upside down after a close encounter with a UFO.', 1977, 'close_encounters.jpg', 'R', 1, 'https://www.youtube.com/watch?v=Fxp32VHaYdE'),
 (25, 'Apocalypse Now', 'During the Vietnam War, Captain Willard is sent on a dangerous mission into Cambodia to assassinate a renegade Colonel who has set himself up as a god among a local tribe.', 1979, 'apocalypse_now.jpg', 'R', 1, 'https://www.youtube.com/watch?v=FTjG-Aux_yQ'),
-(26, 'Rocky', 'A small-time boxer gets a supremely rare chance to fight a heavy-weight champion in a bout in which he strives to go the distance for his self-respect.', 1976, 'rocky.jpg', 'G', 1, 'https://www.youtube.com/watch?v=7RYpJAUMo2M'),
+(26, 'Rocky', 'A small-time boxer gets a supremely rare chance to fight a heavy-weight champion in a bout in which he strives to go the distance for his self-respect.', 1976, 'rocky.jpg', '14A', 1, 'https://www.youtube.com/watch?v=7RYpJAUMo2M'),
 (27, 'Back To The Future', 'Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend, the maverick scientist Doc Brown.', 1985, 'backtothefuture.jpg', 'G', 1, 'https://www.youtube.com/watch?v=qvsgGtivCgs'),
 (28, 'Ghostbusters', 'Three former parapsychology professors set up shop as a unique ghost removal service.', 1984, 'ghostbuster.jpg', 'G', 1, 'https://www.youtube.com/watch?v=vntAEVjPBzQ'),
 (29, 'E.T. The Extra-Terrestrial', 'A troubled child summons the courage to help a friendly alien escape Earth and return to his home world.', 1982, 'et.jpg', 'G', 1, 'https://www.youtube.com/watch?v=qYAETtIIClk'),
@@ -142,13 +138,11 @@ INSERT INTO `tbl_movie` (`movie_id`, `movie_title`, `movie_desc`, `movie_year`, 
 -- Table structure for table `tbl_mov_cat`
 --
 
-DROP TABLE IF EXISTS `tbl_mov_cat`;
-CREATE TABLE IF NOT EXISTS `tbl_mov_cat` (
-  `mov_cat_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_mov_cat` (
+  `mov_cat_id` tinyint(3) UNSIGNED NOT NULL,
   `movie_id` smallint(6) NOT NULL,
-  `cat_id` tinyint(4) NOT NULL,
-  PRIMARY KEY (`mov_cat_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
+  `cat_id` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_mov_cat`
@@ -209,18 +203,16 @@ INSERT INTO `tbl_mov_cat` (`mov_cat_id`, `movie_id`, `cat_id`) VALUES
 -- Table structure for table `tbl_music`
 --
 
-DROP TABLE IF EXISTS `tbl_music`;
-CREATE TABLE IF NOT EXISTS `tbl_music` (
-  `music_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_music` (
+  `music_id` smallint(5) UNSIGNED NOT NULL,
   `music_title` varchar(180) NOT NULL,
   `music_desc` varchar(255) NOT NULL,
   `music_year` year(4) NOT NULL,
   `music_img` varchar(255) NOT NULL,
   `music_certificate` varchar(80) NOT NULL,
   `music_switch` tinyint(1) NOT NULL DEFAULT '1',
-  `music_link` varchar(255) NOT NULL,
-  PRIMARY KEY (`music_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
+  `music_link` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_music`
@@ -235,7 +227,7 @@ INSERT INTO `tbl_music` (`music_id`, `music_title`, `music_desc`, `music_year`, 
 (6, 'The Temptations - My Girl\r\n', '\"Songwriters: William Smokey Robinson / Ronald White\r\nMy Girl lyrics © Sony/ATV Music Publishing LLC\"\r\n', 1965, 'temptations.jpg', 'G', 1, 'https://youtu.be/C_CSjcm-z1w'),
 (7, 'The Archies - Sugar, Sugar\r\n', '\"Songwriters: Andy Kim / Jeff Barry\r\nSugar, Sugar lyrics © Sony/ATV Music Publishing LLC\"\r\n', 1969, 'sugar.jpg', 'G', 1, 'https://youtu.be/h9nE2spOw_o'),
 (8, 'The Monkees- I\'m a Believer\r\n', 'Songwriters: Neil Diamond\r\n', 1967, 'believer.jpg\r\n', 'G', 1, 'https://youtu.be/gv2MLlZKarM'),
-(9, 'Comfortably Numb - Pink Floyd\r\n', 'Songwriters: David Jon Gilmour / George Roger Waters\r\n', 1979, 'numb.jpg', 'G', 1, 'https://youtu.be/YQWszrZHBPI'),
+(9, 'Comfortably Numb - Pink Floyd\r\n', 'Songwriters: David Jon Gilmour / George Roger Waters\r\n', 1979, 'numb.jpg', 'G', 1, 'https://www.youtube.com/watch?v=7KaYCj98quY'),
 (10, 'Bee Gees - Stayin\' Alive\r\n', '\"Artist: Bee Gees\r\nMovie: Saturday Night Fever\"\r\n', 1977, 'bee.jpg', 'G', 1, 'https://youtu.be/I_izvAbhExY'),
 (11, 'Diana Ross: Ain\'t No Mountain High Enough\r\n', '\"Artist: Diana Ross\r\nAlbum: Diana Ross\"\r\n', 1970, 'enough.jpg', 'G', 1, 'https://youtu.be/5_pmKPWLBrE'),
 (12, 'Blondie Heart of glass\r\n', '\"Artist: Blondie\r\nAlbum: Parallel Lines\"\r\n', 1978, 'glass.jpg', 'G', 1, 'https://youtu.be/gbnbMMCfyoc'),
@@ -274,13 +266,11 @@ INSERT INTO `tbl_music` (`music_id`, `music_title`, `music_desc`, `music_year`, 
 -- Table structure for table `tbl_mus_cat`
 --
 
-DROP TABLE IF EXISTS `tbl_mus_cat`;
-CREATE TABLE IF NOT EXISTS `tbl_mus_cat` (
-  `mus_cat_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_mus_cat` (
+  `mus_cat_id` tinyint(3) UNSIGNED NOT NULL,
   `music_id` smallint(6) NOT NULL,
-  `cat_id` tinyint(4) NOT NULL,
-  PRIMARY KEY (`mus_cat_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=latin1;
+  `cat_id` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_mus_cat`
@@ -331,67 +321,86 @@ INSERT INTO `tbl_mus_cat` (`mus_cat_id`, `music_id`, `cat_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_roku_users`
+--
+
+CREATE TABLE `tbl_roku_users` (
+  `user_id` tinyint(3) UNSIGNED NOT NULL,
+  `user_name` varchar(255) NOT NULL,
+  `user_password` varchar(255) NOT NULL,
+  `user_active` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_roku_users`
+--
+
+INSERT INTO `tbl_roku_users` (`user_id`, `user_name`, `user_password`, `user_active`) VALUES
+(1, 'theBoss', '123', 1),
+(2, 'theKid', '123', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_tv`
 --
 
-DROP TABLE IF EXISTS `tbl_tv`;
-CREATE TABLE IF NOT EXISTS `tbl_tv` (
-  `tv_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_tv` (
+  `tv_id` smallint(5) UNSIGNED NOT NULL,
   `tv_title` varchar(180) NOT NULL,
   `tv_desc` varchar(255) NOT NULL,
   `tv_year` year(4) NOT NULL,
   `tv_img` varchar(255) NOT NULL,
   `tv_certificate` varchar(80) NOT NULL,
   `tv_swtich` tinyint(1) NOT NULL DEFAULT '1',
-  `tv_link` varchar(255) NOT NULL,
-  PRIMARY KEY (`tv_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
+  `tv_link` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_tv`
 --
 
 INSERT INTO `tbl_tv` (`tv_id`, `tv_title`, `tv_desc`, `tv_year`, `tv_img`, `tv_certificate`, `tv_swtich`, `tv_link`) VALUES
-(1, 'The Adventures of Ozzie and Harriet - The Rivals (1952)', 'The first episode of the 14-season ABC series, \"The Adventures of Ozzie and Harriet\", complete with original commercials.\r\n', 1952, 'Adventures_Ozzie.jpg', 'TV-G', 1, 'https://youtu.be/TF5WgeQQYbE?list=PLjygzGIObj8_3elt1J8FsYnV456c2gCLW'),
-(2, 'Lassie-Jeff\'s collie', 'The complete first  Lassie TV episode.  In this episode Jeff Miller inherits a young collie named Lassie after the death of her owner, an old neighbor of the Miller family.', 1954, 'Lassie_Jeffs_collie.jpg', 'TV-G', 1, 'https://youtu.be/lXquPCNsPzM?list=PLjygzGIObj8_3elt1J8FsYnV456c2gCLW'),
-(3, 'Make Room for Daddy', 'Danny forgets his wedding anniversary. With flashback to Danny and Margaret\'s first anniversary eleven years earlier.', 1953, 'danny_thomas.jpg', 'TV-PG', 1, 'https://youtu.be/W8s9soNaVCU?list=PLjygzGIObj8_3elt1J8FsYnV456c2gCLW'),
-(4, 'Mother-in-Law\r\n', '\"Danny\'s mother-in-law babysits the children and tells them about her Vaudeville days. \r\nWith original commercials for the show\'s sponsors, Dodge and Lucky Strike.\"\r\n', 1953, 'mother.jpg', 'TV-PG', 1, 'https://youtu.be/V_USXDFLgWg?list=PLjygzGIObj8_3elt1J8FsYnV456c2gCLW\r\n'),
+(1, 'The Adventures of Ozzie and Harriet - The Rivals (1952)', 'The first episode of the 14-season ABC series, \"The Adventures of Ozzie and Harriet\", complete with original commercials.\r\n', 1952, 'adventures_ozzie.jpg', 'G', 1, 'https://youtu.be/TF5WgeQQYbE?list=PLjygzGIObj8_3elt1J8FsYnV456c2gCLW'),
+(2, 'Lassie-Jeff\'s collie', 'The complete first  Lassie TV episode.  In this episode Jeff Miller inherits a young collie named Lassie after the death of her owner, an old neighbor of the Miller family.', 1954, 'lassie_jeffs_collie.jpg', 'G', 1, 'https://youtu.be/lXquPCNsPzM?list=PLjygzGIObj8_3elt1J8FsYnV456c2gCLW'),
+(3, 'Make Room for Daddy', 'Danny forgets his wedding anniversary. With flashback to Danny and Margaret\'s first anniversary eleven years earlier.', 1953, 'danny_thomas.jpg', 'G', 1, 'https://youtu.be/W8s9soNaVCU?list=PLjygzGIObj8_3elt1J8FsYnV456c2gCLW'),
+(4, 'Mother-in-Law\r\n', '\"Danny\'s mother-in-law babysits the children and tells them about her Vaudeville days. \r\nWith original commercials for the show\'s sponsors, Dodge and Lucky Strike.\"\r\n', 1953, 'mother.jpg', 'G', 1, 'https://youtu.be/V_USXDFLgWg?list=PLjygzGIObj8_3elt1J8FsYnV456c2gCLW\r\n'),
 (5, 'April Fools Day on the Howdy Doody Show', '\"The Howdy Doody Show was the first\r\n nationally televised children\'s television show and was also the first NBC show to air five days a week. In addition, it was the first show\r\n ever to air more than 1,000 continuous episodes.\"\r\n', 1952, 'howdy_doody.jpg', 'R', 1, 'https://youtu.be/9pK0hNljoTg?list=PLjygzGIObj8_3elt1J8FsYnV456c2gCLW'),
-(6, 'Shrinking Machine\r\n', 'Howdy Doody episode \'Shrinking Machine\' from 1958 \r\n', 1958, 'Shrinking_machine,jpg', 'TV-G', 1, 'https://youtu.be/P7Py6ORWJ-w?list=PLjygzGIObj8_3elt1J8FsYnV456c2gCLW'),
-(7, 'What\'s My Line? Alfred Hitchcock, Miss America\r\n', 'Tonight\'s episode of What\'s My Line? has Robert Q. Lewis on the panel.  There are two mystery guests, the year\'s Miss America and Alfred Hitchcock\r\n', 1950, 'What_MyLine.jpg', 'TV-G', 1, 'https://youtu.be/SuoGnwWNYvU?list=PLjygzGIObj8_3elt1J8FsYnV456c2gCLW'),
-(8, 'To Tell the Truth - Chester Conklin, original Keystone Cop\r\n', 'Classic game show in which a person of some notoriety and two impostors try to match wits with a panel of four celebrities. The object of the game is to try to fool the celebrities into\r\n', 1957, 'Tell_the_truth.jpg', 'TV-G', 1, 'https://youtu.be/HPEq4dwu_rA?list=PLjygzGIObj8_3elt1J8FsYnV456c2gCLW'),
-(9, 'Jack Benny Program: Jack at the Supermarket\r\n', 'Rochester beat Jack in gin rummy and has taken the afternoon off to play golf, leaving Jack stuck with the household chores.\r\n', 1960, 'jack_supermarket.jpg', 'TV-PG\r\n', 1, 'https://youtu.be/ZqbmnZ7sgZM?list=PLjygzGIObj8_3elt1J8FsYnV456c2gCLW'),
-(10, 'The Doctor Denker Story\r\n', '\"Wagon Train (1962) - The Doctor Denker Story\r\nSeason 5, Episode 18. Original Airdate: Jan. 31, 1962\r\nWhen a traveling musician joins the wagon train, it quickly becomes evident that there is more to him than meets the eye. \"\r\n', 1962, 'Denker_Story.jpg', 'TV-PG', 1, 'https://youtu.be/KyDz5etzmxI?list=PLwygboCFkeeAitLKN3V9uFoEcUCDntCvL'),
-(11, 'Doctor Who \r\n', '\"The adventures in time and space of the Doctor, a \r\nTime Lord who changes appearance and personality \r\nby regenerating when near death, and is joined by \r\ncompanions in battles against aliens and other megalomaniacs.\"\r\n', 1963, 'Doctor_Who.jpg ', 'TV-PG', 1, 'https://youtu.be/09h9SCp94s8'),
-(12, 'Star Trek\r\n', 'This episode is from the 1996 Interactive Movie game \"Star Trek: Borg\".\r\n', 1966, 'Star_Trek.jpg', 'TV-PG', 1, 'https://youtu.be/hi2HO5e_oeM?list=PLl4oTqKnM8rxPQ5Je71zXicHKNJitx7Do'),
-(13, 'The Prisoner\r\n', '\"The Prisoner. It originally aired in the UK on ITV on 29 September 1967 \r\nand was first broadcast in the United States on CBS on 1 June 1968\"\r\n', 1967, 'The_Prisoner.jpg', 'TV-PG', 1, 'https://youtu.be/RyYOgXLenI8'),
-(14, 'Monty Python\'s Flying Circus\r\n', 'The original surreal sketch comedy showcase for the Monty Python troupe.\r\n', 1969, 'Monty_Python.jpg', 'TV-14', 1, 'https://youtu.be/HMJGRZdKblg?list=PL0311C3280CF55105'),
-(15, 'The Bugs Bunny Show \r\n', 'Bugs Bunny, the famous, Oscar-winning cartoon rabbit, hosts his first weekly television series\r\n', 1960, 'Bunny_Show.jpg', 'TV-G', 1, 'https://youtu.be/n0wiYpBez-Q'),
-(16, 'The Bullwinkle Show\r\n', 'Rocky, a plucky flying squirrel and Bullwinkle, a bumbling but lovable moose, have a series of ongoing adventures.\r\n', 1961, 'Bullwinkle_Show.jpg', 'TV-G', 1, 'https://youtu.be/21i76QOczVA'),
-(17, 'Scenes from a Marriage\r\n', 'Ten years within the marriage of Marianne and Johan.\r\n', 1973, 'Marriage.jpg', 'PG', 1, 'https://youtu.be/_KA8fwi5u-s'),
-(18, 'The World at War\r\n', 'A groundbreaking 26-part documentary series narrated by the actor Laurence Olivier about the deadliest conflict in history, World War II.\r\n', 1973, 'World_at_War.jpg', 'TV-PG', 1, 'https://youtu.be/0b4g4ZZNC1E'),
-(19, 'Fawlty Towers \r\n\r\n', 'Hotel owner Basil Fawlty\'s incompetence, short fuse, and arrogance form a combination that ensures accidents and trouble are never far away.\r\n', 1975, 'Fawlty_Towers.jpg', 'TV-G\r\n', 1, 'https://youtu.be/xzp7Y4mCr2E'),
-(20, 'The Muppet Show\r\n', 'Kermit the Frog and his friends struggle to put on a weekly variety show.\r\n', 1976, 'Muppet_Show.jpg', 'TV-G', 1, 'https://youtu.be/xzp7Y4mCr2E'),
-(21, 'I, Claudius \r\n', 'The history of the Roman Empire as experienced by one of its rulers.\r\n', 1976, 'Claudius .jpg', 'TV-G', 1, 'https://youtu.be/B7HHrkoac0o'),
-(22, 'Jesus of Nazareth \r\n', '\"Beginning before the Nativity and extending through the Crucifixion and Resurrection, this mini-series brings to life all of the sweeping drama in the life of Jesus, \r\nas told by the Gospels..\"\r\n', 1977, 'Jesus.jpg', 'TV-G', 1, 'https://youtu.be/50IiF1rTTGQ'),
-(23, 'Mind Your Language\r\n', 'Jeremy Brown is a put-upon language teacher who tries to make a living by teaching English to immigrants.\r\n', 1978, 'Mind_Your_Language.jpg', 'PG', 1, 'https://youtu.be/vhd1IqNM3M8'),
-(24, 'Tinker Tailor Soldier Spy\r\n', 'In the bleak days of the Cold War, espionage veteran George Smiley is forced out of semi-retirement to uncover a Soviet Agent within MI6\'s echelons.\r\n', 1979, 'Soldier_Spy.jpg', 'TV-14', 1, 'https://youtu.be/pq61jstTApk'),
-(25, 'Yes Minister \r\n', 'The Right Honorable James Hacker has landed the plum job of Cabinet Minister to the Department of Administration.\r\n', 1980, 'Yes_Minister.jpg', 'TV-PG', 1, 'https://youtu.be/SdVFD1MuPrU'),
-(26, 'Cosmos \r\n', 'Astronomer Carl Sagan leads us on an engaging guided tour of the various elements and cosmological theories of the universe.\r\n', 1980, 'Cosmos.jpg', 'TV-PG', 1, 'https://youtu.be/OSnhugfPMGY?list=PLmSKUtrLFVU8UYoBgG-RlEFL9egFwvThx'),
-(27, 'Only Fools and Horses', '\"Comedy that follows two brothers from \r\nLondon\'s rough Peckham estate as they\r\n wheel and deal through a number of dodgy\r\n deals as they search for the big score that\'ll make them millionaires.\"\r\n', 1981, 'Fools&Horses.jpg', 'TV-PG', 1, 'https://youtu.be/J1y1D4wujMc?list=PL1ibBy_WimN0dyXmAHsix9hy9IDLGYyd4'),
-(28, 'Brideshead Revisited', 'Charles Ryder, though of no family or money, becomes friends with Sebastian Flyte when Sebastian throws up in his college room through an open window. \r\n', 1981, 'Brideshead.jpg', 'TV-PG', 1, 'https://youtu.be/GOKLsbtLsLQ?list=PL-NIGjxJ2hZ5Esaq3TZksQsY7gZ_u0Ib8'),
-(29, 'Police Squad!', 'Sight gags and non-sequiturs dominate this spoof of police dramas. \r\n', 1982, 'Police_Squad.jpg', 'TV-PG', 1, 'https://youtu.be/7e1_nr3H178'),
-(30, 'The Adventures of Sherlock Holmes\r\n', '\"Sherlock Holmes and Dr Watson solve the mysteries of \r\ncopper beeches, a Greek interpreter, the Norwood builder, \r\na resident patient, the red-headed league, and one final problem.\"\r\n', 1984, 'Sherlock_Holmes.jpg', 'TV-PG', 1, 'https://youtu.be/bRJo0uIH8Us?list=PLTvLq79zCwvL8GsPVNKJNosVzqFYHKq1O'),
-(31, 'Das Boot', 'A World War II German U-Boat crew have a terrifying patrol mission in the early days of the war.\r\n', 1985, 'Das_Boot.jpg', 'TV-MA', 1, 'https://youtu.be/2dRGfGrGFF0'),
-(32, 'Yes, Prime Minister', 'James Hacker was propelled along the corridors of power to the very pinnacle of politic\r\n', 1986, 'Prime_Minister.jpg', 'TV-PG', 1, 'https://youtu.be/S3FvnNk4u_o'),
-(33, 'Twin Peaks \r\n', 'An idiosyncratic FBI agent investigates the murder of a young woman in the even more idiosyncratic town of Twin Peaks.\r\n', 1990, 'Twin_Peaks.jpg', 'TV-MA', 1, 'https://youtu.be/q040A3z1W08?list=PL3O86-pmeeuEHQg16LwTBVTV1NbABleyr\r\n'),
-(34, 'Batman: The Animated Series\r\n', 'The Dark Knight battles crime in Gotham City with occasional help from Robin and Batgirl.\r\n', 1992, 'batman.jpg', 'TV-PG', 1, 'https://youtu.be/9ZqJA5NZCyU?list=EL9uGMjD7xpa8'),
-(35, 'X-Men\r\n', 'A team of mutant superheroes fight for justice and human acceptance in the Marvel Comics universe.\r\n', 1992, 'Xmen.jpg\r\n', 'TV-Y7\r\n', 1, 'https://youtu.be/1ggrTdnwqWM'),
-(36, 'Homicide: Life on the Street', 'A police homicide investigation unit investigates violent crimes in the city of Baltimore.\r\n', 1993, 'Homicide.jpg', 'TV-14', 1, 'https://youtu.be/g4OLMnXJbfM'),
-(37, 'Friends', 'Follows the personal and professional lives of six twenty to thirty-something-year-old friends living in Manhattan.\r\n', 1994, 'Friends.jpg', 'TV-14', 1, 'https://youtu.be/Uh0I6xe7Svc?list=PL4VjYMnxdYuW6Eqst_ko7JxLJgqC4ODfK'),
-(38, 'Father Ted \r\n', '\"\r\nThree misfit priests and their housekeeper live on Craggy Island, not the peaceful and quiet part of Ireland that it seems to be.\"\r\n', 1995, 'FatherTed.jpg', 'TV-14', 1, 'https://youtu.be/TAMsPEiSLyY?list=PLCK5Lcs_vqSB0qGD9mtY-m_4OILTNaHww'),
-(39, 'Dragon Ball Z\r\n', 'After learning that he is from another planet, a warrior named Goku and his friends are prompted to defend it from an onslaught of extraterrestrial enemies.\r\n', 1996, 'BallZ.jpg', 'TV-PG', 1, 'https://youtu.be/9862ND591Kg'),
-(40, 'Oz\r\n', 'A series chronicling the daily activities of an unusual prison facility and its criminal inhabitants.\r\n', 1997, 'Oz.jpg', 'TV-MA', 1, 'https://youtu.be/NQC_tm4Tf6c?list=PLzVP5Khjq34eAKQI-wS0Fm4MuG0-1Qs-b');
+(6, 'Shrinking Machine\r\n', 'Howdy Doody episode \'Shrinking Machine\' from 1958 \r\n', 1958, 'shrinking_machine.jpg', 'G', 1, 'https://youtu.be/P7Py6ORWJ-w?list=PLjygzGIObj8_3elt1J8FsYnV456c2gCLW'),
+(7, 'What\'s My Line? Alfred Hitchcock, Miss America\r\n', 'Tonight\'s episode of What\'s My Line? has Robert Q. Lewis on the panel.  There are two mystery guests, the year\'s Miss America and Alfred Hitchcock\r\n', 1950, 'what_myLine.jpg', 'G', 1, 'https://youtu.be/SuoGnwWNYvU?list=PLjygzGIObj8_3elt1J8FsYnV456c2gCLW'),
+(8, 'To Tell the Truth - Chester Conklin, original Keystone Cop\r\n', 'Classic game show in which a person of some notoriety and two impostors try to match wits with a panel of four celebrities. The object of the game is to try to fool the celebrities into\r\n', 1957, 'tell_the_truth.jpg', 'G', 1, 'https://youtu.be/HPEq4dwu_rA?list=PLjygzGIObj8_3elt1J8FsYnV456c2gCLW'),
+(9, 'Jack Benny Program: Jack at the Supermarket\r\n', 'Rochester beat Jack in gin rummy and has taken the afternoon off to play golf, leaving Jack stuck with the household chores.\r\n', 1960, 'jack_supermarket.jpg', 'G\r\n', 1, 'https://youtu.be/ZqbmnZ7sgZM?list=PLjygzGIObj8_3elt1J8FsYnV456c2gCLW'),
+(10, 'The Doctor Denker Story\r\n', '\"Wagon Train (1962) - The Doctor Denker Story\r\nSeason 5, Episode 18. Original Airdate: Jan. 31, 1962\r\nWhen a traveling musician joins the wagon train, it quickly becomes evident that there is more to him than meets the eye. \"\r\n', 1962, 'denker_story.jpg', 'G', 1, 'https://youtu.be/KyDz5etzmxI?list=PLwygboCFkeeAitLKN3V9uFoEcUCDntCvL'),
+(11, 'Doctor Who \r\n', '\"The adventures in time and space of the Doctor, a \r\nTime Lord who changes appearance and personality \r\nby regenerating when near death, and is joined by \r\ncompanions in battles against aliens and other megalomaniacs.\"\r\n', 1963, 'doctor_who.jpg ', 'G', 1, 'https://youtu.be/09h9SCp94s8'),
+(12, 'Star Trek\r\n', 'This episode is from the 1996 Interactive Movie game \"Star Trek: Borg\".\r\n', 1966, 'star_trek.jpg', 'G', 1, 'https://youtu.be/hi2HO5e_oeM?list=PLl4oTqKnM8rxPQ5Je71zXicHKNJitx7Do'),
+(13, 'The Prisoner\r\n', '\"The Prisoner. It originally aired in the UK on ITV on 29 September 1967 \r\nand was first broadcast in the United States on CBS on 1 June 1968\"\r\n', 1967, 'the_prisoner.jpg', 'G', 1, 'https://youtu.be/RyYOgXLenI8'),
+(14, 'Monty Python\'s Flying Circus\r\n', 'The original surreal sketch comedy showcase for the Monty Python troupe.\r\n', 1969, 'monty_python.jpg', 'G', 1, 'https://youtu.be/HMJGRZdKblg?list=PL0311C3280CF55105'),
+(15, 'The Bugs Bunny Show \r\n', 'Bugs Bunny, the famous, Oscar-winning cartoon rabbit, hosts his first weekly television series\r\n', 1960, 'bunny_show.jpg', 'G', 1, 'https://youtu.be/n0wiYpBez-Q'),
+(16, 'The Bullwinkle Show\r\n', 'Rocky, a plucky flying squirrel and Bullwinkle, a bumbling but lovable moose, have a series of ongoing adventures.\r\n', 1961, 'bullwinkle_show.jpg', 'G', 1, 'https://youtu.be/21i76QOczVA'),
+(17, 'Scenes from a Marriage\r\n', 'Ten years within the marriage of Marianne and Johan.\r\n', 1973, 'marriage.jpg', 'G', 1, 'https://youtu.be/_KA8fwi5u-s'),
+(18, 'The World at War\r\n', 'A groundbreaking 26-part documentary series narrated by the actor Laurence Olivier about the deadliest conflict in history, World War II.\r\n', 1973, 'world_at_war.jpg', 'G', 1, 'https://youtu.be/0b4g4ZZNC1E'),
+(19, 'Fawlty Towers \r\n\r\n', 'Hotel owner Basil Fawlty\'s incompetence, short fuse, and arrogance form a combination that ensures accidents and trouble are never far away.\r\n', 1975, 'fawlty_towers.jpg', 'G', 1, 'https://youtu.be/xzp7Y4mCr2E'),
+(20, 'The Muppet Show\r\n', 'Kermit the Frog and his friends struggle to put on a weekly variety show.\r\n', 1976, 'muppet_show.jpg', 'G', 1, 'https://youtu.be/xzp7Y4mCr2E'),
+(21, 'I, Claudius \r\n', 'The history of the Roman Empire as experienced by one of its rulers.\r\n', 1976, 'claudius .jpg', 'G', 1, 'https://youtu.be/B7HHrkoac0o'),
+(22, 'Jesus of Nazareth \r\n', '\"Beginning before the Nativity and extending through the Crucifixion and Resurrection, this mini-series brings to life all of the sweeping drama in the life of Jesus, \r\nas told by the Gospels..\"\r\n', 1977, 'jesus.jpg', 'G', 1, 'https://youtu.be/50IiF1rTTGQ'),
+(23, 'Mind Your Language\r\n', 'Jeremy Brown is a put-upon language teacher who tries to make a living by teaching English to immigrants.\r\n', 1978, 'mind_your_language.jpg', 'G', 1, 'https://youtu.be/vhd1IqNM3M8'),
+(24, 'Tinker Tailor Soldier Spy\r\n', 'In the bleak days of the Cold War, espionage veteran George Smiley is forced out of semi-retirement to uncover a Soviet Agent within MI6\'s echelons.\r\n', 1979, 'soldier_spy.jpg', 'G', 1, 'https://youtu.be/pq61jstTApk'),
+(25, 'Yes Minister \r\n', 'The Right Honorable James Hacker has landed the plum job of Cabinet Minister to the Department of Administration.\r\n', 1980, 'yes_minister.jpg', 'G', 1, 'https://youtu.be/SdVFD1MuPrU'),
+(26, 'Cosmos \r\n', 'Astronomer Carl Sagan leads us on an engaging guided tour of the various elements and cosmological theories of the universe.\r\n', 1980, 'cosmos.jpg', 'G', 1, 'https://youtu.be/OSnhugfPMGY?list=PLmSKUtrLFVU8UYoBgG-RlEFL9egFwvThx'),
+(27, 'Only Fools and Horses', '\"Comedy that follows two brothers from \r\nLondon\'s rough Peckham estate as they\r\n wheel and deal through a number of dodgy\r\n deals as they search for the big score that\'ll make them millionaires.\"\r\n', 1981, 'fools&horses.jpg', 'G', 1, 'https://youtu.be/J1y1D4wujMc?list=PL1ibBy_WimN0dyXmAHsix9hy9IDLGYyd4'),
+(28, 'Brideshead Revisited', 'Charles Ryder, though of no family or money, becomes friends with Sebastian Flyte when Sebastian throws up in his college room through an open window. \r\n', 1981, 'brideshead.jpg', 'G', 1, 'https://youtu.be/GOKLsbtLsLQ?list=PL-NIGjxJ2hZ5Esaq3TZksQsY7gZ_u0Ib8'),
+(29, 'Police Squad!', 'Sight gags and non-sequiturs dominate this spoof of police dramas. \r\n', 1982, 'police_squad.jpg', 'G', 1, 'https://youtu.be/7e1_nr3H178'),
+(30, 'The Adventures of Sherlock Holmes\r\n', '\"Sherlock Holmes and Dr Watson solve the mysteries of \r\ncopper beeches, a Greek interpreter, the Norwood builder, \r\na resident patient, the red-headed league, and one final problem.\"\r\n', 1984, 'sherlock_holmes.jpg', 'G', 1, 'https://youtu.be/bRJo0uIH8Us?list=PLTvLq79zCwvL8GsPVNKJNosVzqFYHKq1O'),
+(31, 'Das Boot', 'A World War II German U-Boat crew have a terrifying patrol mission in the early days of the war.\r\n', 1985, 'das_boot.jpg', 'G', 1, 'https://youtu.be/2dRGfGrGFF0'),
+(32, 'Yes, Prime Minister', 'James Hacker was propelled along the corridors of power to the very pinnacle of politic\r\n', 1986, 'prime_minister.jpg', 'G', 1, 'https://youtu.be/S3FvnNk4u_o'),
+(33, 'Twin Peaks \r\n', 'An idiosyncratic FBI agent investigates the murder of a young woman in the even more idiosyncratic town of Twin Peaks.\r\n', 1990, 'twin_peaks.jpg', 'G', 1, 'https://youtu.be/q040A3z1W08?list=PL3O86-pmeeuEHQg16LwTBVTV1NbABleyr\r\n'),
+(34, 'Batman: The Animated Series\r\n', 'The Dark Knight battles crime in Gotham City with occasional help from Robin and Batgirl.\r\n', 1992, 'batman.jpg', 'G', 1, 'https://youtu.be/9ZqJA5NZCyU?list=EL9uGMjD7xpa8'),
+(35, 'X-Men\r\n', 'A team of mutant superheroes fight for justice and human acceptance in the Marvel Comics universe.\r\n', 1992, 'xmen.jpg\r\n', 'G\r\n', 1, 'https://youtu.be/1ggrTdnwqWM'),
+(36, 'Homicide: Life on the Street', 'A police homicide investigation unit investigates violent crimes in the city of Baltimore.\r\n', 1993, 'homicide.jpg', 'R', 1, 'https://youtu.be/g4OLMnXJbfM'),
+(37, 'Friends', 'Follows the personal and professional lives of six twenty to thirty-something-year-old friends living in Manhattan.\r\n', 1994, 'friends.jpg', 'R', 1, 'https://youtu.be/Uh0I6xe7Svc?list=PL4VjYMnxdYuW6Eqst_ko7JxLJgqC4ODfK'),
+(38, 'Father Ted \r\n', '\"\r\nThree misfit priests and their housekeeper live on Craggy Island, not the peaceful and quiet part of Ireland that it seems to be.\"\r\n', 1995, 'fatherTed.jpg', 'R', 1, 'https://youtu.be/TAMsPEiSLyY?list=PLCK5Lcs_vqSB0qGD9mtY-m_4OILTNaHww'),
+(39, 'Dragon Ball Z\r\n', 'After learning that he is from another planet, a warrior named Goku and his friends are prompted to defend it from an onslaught of extraterrestrial enemies.\r\n', 1996, 'ballZ.jpg', 'G', 1, 'https://youtu.be/9862ND591Kg'),
+(40, 'Oz\r\n', 'A series chronicling the daily activities of an unusual prison facility and its criminal inhabitants.\r\n', 1997, 'oz.jpg', 'G', 1, 'https://youtu.be/NQC_tm4Tf6c?list=PLzVP5Khjq34eAKQI-wS0Fm4MuG0-1Qs-b');
 
 -- --------------------------------------------------------
 
@@ -399,13 +408,11 @@ INSERT INTO `tbl_tv` (`tv_id`, `tv_title`, `tv_desc`, `tv_year`, `tv_img`, `tv_c
 -- Table structure for table `tbl_tv_cat`
 --
 
-DROP TABLE IF EXISTS `tbl_tv_cat`;
-CREATE TABLE IF NOT EXISTS `tbl_tv_cat` (
-  `tv_cat_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_tv_cat` (
+  `tv_cat_id` tinyint(3) UNSIGNED NOT NULL,
   `tv_id` smallint(6) NOT NULL,
-  `cat_id` tinyint(4) NOT NULL,
-  PRIMARY KEY (`tv_cat_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
+  `cat_id` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_tv_cat`
@@ -459,20 +466,143 @@ INSERT INTO `tbl_tv_cat` (`tv_cat_id`, `tv_id`, `cat_id`) VALUES
 -- Table structure for table `tbl_user`
 --
 
-DROP TABLE IF EXISTS `tbl_user`;
-CREATE TABLE IF NOT EXISTS `tbl_user` (
-  `user_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_user` (
+  `user_id` tinyint(3) UNSIGNED NOT NULL,
+  `user_name` varchar(255) NOT NULL,
   `username` varchar(80) NOT NULL,
-  `password` int(80) NOT NULL,
-  PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `password` varchar(255) NOT NULL,
+  `user_email` varchar(255) NOT NULL DEFAULT 'camillo@test.com',
+  `user_img` varchar(255) NOT NULL DEFAULT 'parents.svg',
+  `user_admin` tinyint(1) DEFAULT '1',
+  `user_access` tinyint(4) NOT NULL DEFAULT '5',
+  `user_active` tinyint(1) DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_user`
 --
 
-INSERT INTO `tbl_user` (`user_id`, `username`, `password`) VALUES
-(1, 'the_boss', 123);
+INSERT INTO `tbl_user` (`user_id`, `user_name`, `username`, `password`, `user_email`, `user_img`, `user_admin`, `user_access`, `user_active`) VALUES
+(1, 'Camillo', 'theBoss', '123', 'camillo@test.com', 'sport.svg', 1, 5, 1),
+(2, 'Barbara', 'Barbara', '123', 'camillo@test.com', 'novel.svg', 1, 5, 1),
+(3, 'Christian', 'Christian', '123', 'camillo@test.com', 'ironman.svg', 0, 3, 1),
+(4, 'Emma', 'Emma', '123', 'camillo@test.com', 'ballet.svg', 0, 2, 1);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tbl_category`
+--
+ALTER TABLE `tbl_category`
+  ADD PRIMARY KEY (`cat_id`);
+
+--
+-- Indexes for table `tbl_movie`
+--
+ALTER TABLE `tbl_movie`
+  ADD PRIMARY KEY (`movie_id`);
+
+--
+-- Indexes for table `tbl_mov_cat`
+--
+ALTER TABLE `tbl_mov_cat`
+  ADD PRIMARY KEY (`mov_cat_id`);
+
+--
+-- Indexes for table `tbl_music`
+--
+ALTER TABLE `tbl_music`
+  ADD PRIMARY KEY (`music_id`);
+
+--
+-- Indexes for table `tbl_mus_cat`
+--
+ALTER TABLE `tbl_mus_cat`
+  ADD PRIMARY KEY (`mus_cat_id`);
+
+--
+-- Indexes for table `tbl_roku_users`
+--
+ALTER TABLE `tbl_roku_users`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- Indexes for table `tbl_tv`
+--
+ALTER TABLE `tbl_tv`
+  ADD PRIMARY KEY (`tv_id`);
+
+--
+-- Indexes for table `tbl_tv_cat`
+--
+ALTER TABLE `tbl_tv_cat`
+  ADD PRIMARY KEY (`tv_cat_id`);
+
+--
+-- Indexes for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tbl_category`
+--
+ALTER TABLE `tbl_category`
+  MODIFY `cat_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT for table `tbl_movie`
+--
+ALTER TABLE `tbl_movie`
+  MODIFY `movie_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT for table `tbl_mov_cat`
+--
+ALTER TABLE `tbl_mov_cat`
+  MODIFY `mov_cat_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
+--
+-- AUTO_INCREMENT for table `tbl_music`
+--
+ALTER TABLE `tbl_music`
+  MODIFY `music_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT for table `tbl_mus_cat`
+--
+ALTER TABLE `tbl_mus_cat`
+  MODIFY `mus_cat_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT for table `tbl_roku_users`
+--
+ALTER TABLE `tbl_roku_users`
+  MODIFY `user_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tbl_tv`
+--
+ALTER TABLE `tbl_tv`
+  MODIFY `tv_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT for table `tbl_tv_cat`
+--
+ALTER TABLE `tbl_tv_cat`
+  MODIFY `tv_cat_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  MODIFY `user_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
