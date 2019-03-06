@@ -16,7 +16,6 @@ export default {
                 <li class="navigation__item" v-for="item in navlist">
                         <a :href="'#'+item" class="navigation__link">{{ item }}</a>
                       </li>
-                      <li  @click.prevent="openLogin()" class="navigation__item"><a href="" class="navigation__link">Login</a></li>
                       <li @click.prevent='logout()' class="navigation__item"><a href="" class="navigation__link">Logout</a></li>
                 <ul id="social">
                   <li>
