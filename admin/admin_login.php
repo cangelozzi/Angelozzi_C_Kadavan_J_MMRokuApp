@@ -5,7 +5,7 @@
     } else {
         $username = $_POST['username'];
         $password = $_POST['password'];
-        // $ip = $_SERVER['REMOTE_ADDR'];
+        $ip = $_SERVER['REMOTE_ADDR'];
         // var_dump($_POST);
         // die;
         $message = login($username, $password, $ip);
