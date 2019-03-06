@@ -21,7 +21,7 @@ export default {
       <router-link
         :to="{name:'settings', params:{ users } }"
         style="cursor: pointer" >
-        <p class="usersSettings">Settings</p>
+        <p v-if="isAdmin" class="usersSettings">Settings</p>
         <i v-if="isAdmin" id="settings" class="fas fa-cog"></i>
       </router-link>
     </section>

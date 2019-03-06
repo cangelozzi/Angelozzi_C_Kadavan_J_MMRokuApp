@@ -5,8 +5,8 @@ export default {
     <div class="login">
     <div v-if="loginShow" class="login-container">
     <h1 id="isAuth" v-if="isAuth">Username or Password are not correct. Please try again.</h1>
-        <p><input type="text" name="username" v-model="input.username" placeholder="for test use: theBoss" required ></p>
-        <p><input type="password" name="password" v-model="input.password" placeholder="for test use: 123" required></p>
+        <p><input type="text" name="username" v-model="input.username" placeholder="test parent: 'theBoss' --- test kid: 'Emma'" required ></p>
+        <p><input type="password" name="password" v-model="input.password" placeholder="test password: 123" required></p>
         <button type="button" @click="login()">Login Here</button>
       </div>
     </div>
