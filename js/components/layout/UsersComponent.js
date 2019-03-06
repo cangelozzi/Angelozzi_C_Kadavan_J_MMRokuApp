@@ -1,8 +1,8 @@
-import HeaderComponent from "./HeaderComponent";
+import UserHeaderComponent from "./UsersHeaderComponent";
 export default {
   template: `
   <section id="profiles" data-palette='0'>
-      <HeaderComponent />
+      <UserHeaderComponent />
 
       <h1 class="profileTitle">Who is having fun today?</h1>
 
@@ -65,6 +65,6 @@ export default {
   },
 
   components: {
-    HeaderComponent
+    UserHeaderComponent
   }
 };
