@@ -66,10 +66,10 @@ export default {
                 </v-flex>
               </v-layout>
               <v-divider light></v-divider>
-              <v-card-actions class="pa-3">
+              <v-card-actions class="pa-3" v-if="myList.length">
                 FAVOURITE
                 <v-spacer></v-spacer>
-                <div class="text-xs-center" @click="favOn(myList[0].movie_id, myList[0].movie_fav, $event)">
+                <div v-if="myList.length" class="text-xs-center" @click="favOn(myList[0].movie_id, myList[0].movie_fav, $event)">
                   <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
@@ -100,10 +100,10 @@ export default {
                 </v-flex>
               </v-layout>
               <v-divider light></v-divider>
-              <v-card-actions class="pa-3">
+              <v-card-actions class="pa-3" v-if="myList.length">
                 FAVOURITE
                 <v-spacer></v-spacer>
-                <div class="text-xs-center" @click="favOn(myList[1].movie_id, myList[1].movie_fav, $event)">
+                <div v-if="myList.length" class="text-xs-center" @click="favOn(myList[1].movie_id, myList[1].movie_fav, $event)">
                   <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
@@ -132,10 +132,10 @@ export default {
                 </v-flex>
               </v-layout>
               <v-divider light></v-divider>
-              <v-card-actions class="pa-3">
+              <v-card-actions class="pa-3" v-if="myList.length">
                 FAVOURITE
                 <v-spacer></v-spacer>
-                <div class="text-xs-center" @click="favOn(myList[2].movie_id, myList[2].movie_fav, $event)">
+                <div v-if="myList.length" class="text-xs-center" @click="favOn(myList[2].movie_id, myList[2].movie_fav, $event)">
                   <p :style="fav"><i @click="favOn($event)" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
@@ -164,10 +164,10 @@ export default {
                 </v-flex>
               </v-layout>
               <v-divider light></v-divider>
-              <v-card-actions class="pa-3">
+              <v-card-actions class="pa-3" v-if="myList.length">
                 FAVOURITE
                 <v-spacer></v-spacer>
-                <div class="text-xs-center" @click="favOn(myList[3].movie_id, myList[3].movie_fav, $event)">
+                <div v-if="myList.length" class="text-xs-center" @click="favOn(myList[3].movie_id, myList[3].movie_fav, $event)">
                   <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
@@ -225,16 +225,16 @@ export default {
                       <div v-if="myPopular.length" class="headline">{{myPopular[0].movie_title}}</div>
                       <div v-if="myPopular.length" style="font-size: 1.4rem;">{{myPopular[0].movie_desc}}</div>
                       <div v-if="myPopular.length">{{myPopular[0].movie_year}}</div>
-                      <a class="trailer" v-if="myList.length" :href="myPopular[0].movie_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
+                      <a class="trailer" v-if="myPopular.length" :href="myPopular[0].movie_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
                     </div>
                   </v-card-title>
                 </v-flex>
               </v-layout>
               <v-divider light></v-divider>
-              <v-card-actions class="pa-3">
+              <v-card-actions class="pa-3" v-if="myPopular.length">
                 FAVOURITE
                 <v-spacer></v-spacer>
-                <div class="text-xs-center" @click="favOn(myPopular[0].movie_id, myPopular[0].movie_fav, $event)">
+                <div v-if="myPopular.length" class="text-xs-center" @click="favOn(myPopular[0].movie_id, myPopular[0].movie_fav, $event)">
                   <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
@@ -250,7 +250,7 @@ export default {
                       <div v-if="myPopular.length" class="headline">{{myPopular[1].movie_title}}</div>
                       <div v-if="myPopular.length" style="font-size: 1.4rem;">{{myPopular[1].movie_desc}}</div>
                       <div v-if="myPopular.length">{{myPopular[1].movie_year}}</div>
-                      <a class="trailer" v-if="myList.length" :href="myPopular[1].movie_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
+                      <a class="trailer" v-if="myPopular.length" :href="myPopular[1].movie_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
                     </div>
                   </v-card-title>
                 </v-flex>
@@ -263,10 +263,10 @@ export default {
                 </v-flex>
               </v-layout>
               <v-divider light></v-divider>
-              <v-card-actions class="pa-3">
+              <v-card-actions class="pa-3" v-if="myPopular.length">
                 FAVOURITE
                 <v-spacer></v-spacer>
-                <div class="text-xs-center" @click="favOn(myPopular[1].movie_id, myPopular[1].movie_fav, $event)">
+                <div v-if="myPopular.length" class="text-xs-center" @click="favOn(myPopular[1].movie_id, myPopular[1].movie_fav, $event)">
                   <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
@@ -289,16 +289,16 @@ export default {
                       <div v-if="myPopular.length" class="headline">{{myPopular[2].movie_title}}</div>
                       <div v-if="myPopular.length" style="font-size: 1.4rem;">{{myPopular[2].movie_desc}}</div>
                       <div v-if="myPopular.length">{{myPopular[2].movie_year}}</div>
-                      <a class="trailer" v-if="myList.length" :href="myPopular[2].movie_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
+                      <a class="trailer" v-if="myPopular.length" :href="myPopular[2].movie_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
                     </div>
                   </v-card-title>
                 </v-flex>
               </v-layout>
               <v-divider light></v-divider>
-              <v-card-actions class="pa-3">
+              <v-card-actions class="pa-3" v-if="myPopular.length">
                 FAVOURITE
                 <v-spacer></v-spacer>
-                <div class="text-xs-center" @click="favOn(myPopular[2].movie_id, myPopular[2].movie_fav, $event)">
+                <div v-if="myPopular.length" class="text-xs-center" @click="favOn(myPopular[2].movie_id, myPopular[2].movie_fav, $event)">
                   <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
@@ -314,7 +314,7 @@ export default {
                       <div v-if="myPopular.length" class="headline">{{myPopular[3].movie_title}}</div>
                       <div v-if="myPopular.length" style="font-size: 1.4rem;">{{myPopular[3].movie_desc}}</div>
                       <div v-if="myPopular.length">{{myPopular[3].movie_year}}</div>
-                      <a class="trailer" v-if="myList.length" :href="myPopular[3].movie_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
+                      <a class="trailer" v-if="myPopular.length" :href="myPopular[3].movie_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
                     </div>
                   </v-card-title>
                 </v-flex>
@@ -327,10 +327,10 @@ export default {
                 </v-flex>
               </v-layout>
               <v-divider light></v-divider>
-              <v-card-actions class="pa-3">
+              <v-card-actions class="pa-3" v-if="myPopular.length">
                 FAVOURITE
                 <v-spacer></v-spacer>
-                <div class="text-xs-center" @click="favOn(myPopular[3].movie_id, myPopular[3].movie_fav, $event)">
+                <div v-if="myPopular.length" class="text-xs-center" @click="favOn(myPopular[3].movie_id, myPopular[3].movie_fav, $event)">
                   <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
