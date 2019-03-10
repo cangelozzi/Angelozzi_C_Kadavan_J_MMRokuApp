@@ -67,15 +67,10 @@ export default {
               </v-layout>
               <v-divider light></v-divider>
               <v-card-actions class="pa-3">
-                Rate this movie
+                FAVOURITE
                 <v-spacer></v-spacer>
-                <div class="text-xs-center">
-                  <v-rating
-                    v-model="rating1"
-                    background-color="$dark-purple"
-                    color="orange"
-                    medium
-                  ></v-rating>
+                <div class="text-xs-center" @click="favOn(myList[0].movie_id, myList[0].movie_fav, $event)">
+                  <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
             </v-card>
@@ -106,14 +101,11 @@ export default {
               </v-layout>
               <v-divider light></v-divider>
               <v-card-actions class="pa-3">
-                Rate this movie
+                FAVOURITE
                 <v-spacer></v-spacer>
-                <v-rating
-                    v-model="rating2"
-                    background-color="$dark-purple"
-                    color="orange"
-                    medium
-                  ></v-rating>
+                <div class="text-xs-center" @click="favOn(myList[1].movie_id, myList[1].movie_fav, $event)">
+                  <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
+                </div>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -141,14 +133,11 @@ export default {
               </v-layout>
               <v-divider light></v-divider>
               <v-card-actions class="pa-3">
-                Rate this movie
+                FAVOURITE
                 <v-spacer></v-spacer>
-                <v-rating
-                    v-model="rating3"
-                    background-color="$dark-purple"
-                    color="orange"
-                    medium
-                  ></v-rating>
+                <div class="text-xs-center" @click="favOn(myList[2].movie_id, myList[2].movie_fav, $event)">
+                  <p :style="fav"><i @click="favOn($event)" class="fas fa-heart"></i></p>
+                </div>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -176,14 +165,11 @@ export default {
               </v-layout>
               <v-divider light></v-divider>
               <v-card-actions class="pa-3">
-                Rate this movie
+                FAVOURITE
                 <v-spacer></v-spacer>
-                <v-rating
-                    v-model="rating4"
-                    background-color="$dark-purple"
-                    color="orange"
-                    medium
-                  ></v-rating>
+                <div class="text-xs-center" @click="favOn(myList[3].movie_id, myList[3].movie_fav, $event)">
+                  <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
+                </div>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -245,15 +231,12 @@ export default {
                 </v-flex>
               </v-layout>
               <v-divider light></v-divider>
-              <v-card-actions class="pa-3" v-if="myPopular.length">
-                Rate this movie
+              <v-card-actions class="pa-3">
+                FAVOURITE
                 <v-spacer></v-spacer>
-                <v-rating
-                    v-model="rating5"
-                    background-color="$dark-purple"
-                    color="orange"
-                    medium
-                  ></v-rating>
+                <div class="text-xs-center" @click="favOn(myPopular[0].movie_id, myPopular[0].movie_fav, $event)">
+                  <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
+                </div>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -281,14 +264,11 @@ export default {
               </v-layout>
               <v-divider light></v-divider>
               <v-card-actions class="pa-3">
-                Rate this movie
+                FAVOURITE
                 <v-spacer></v-spacer>
-                <v-rating
-                    v-model="rating6"
-                    background-color="$dark-purple"
-                    color="orange"
-                    medium
-                  ></v-rating>
+                <div class="text-xs-center" @click="favOn(myPopular[1].movie_id, myPopular[1].movie_fav, $event)">
+                  <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
+                </div>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -316,14 +296,11 @@ export default {
               </v-layout>
               <v-divider light></v-divider>
               <v-card-actions class="pa-3">
-                Rate this movie
+                FAVOURITE
                 <v-spacer></v-spacer>
-                <v-rating
-                    v-model="rating7"
-                    background-color="$dark-purple"
-                    color="orange"
-                    medium
-                  ></v-rating>
+                <div class="text-xs-center" @click="favOn(myPopular[2].movie_id, myPopular[2].movie_fav, $event)">
+                  <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
+                </div>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -351,14 +328,11 @@ export default {
               </v-layout>
               <v-divider light></v-divider>
               <v-card-actions class="pa-3">
-                Rate this movie
+                FAVOURITE
                 <v-spacer></v-spacer>
-                <v-rating
-                    v-model="rating8"
-                    background-color="$dark-purple"
-                    color="orange"
-                    medium
-                  ></v-rating>
+                <div class="text-xs-center" @click="favOn(myPopular[3].movie_id, myPopular[3].movie_fav, $event)">
+                  <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
+                </div>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -379,18 +353,14 @@ export default {
       user: "",
       myList: [],
       myPopular: [],
-      rating1: 0,
-      rating2: 0,
-      rating3: 0,
-      rating4: 0,
-      rating5: 0,
-      rating6: 0,
-      rating7: 0,
-      rating8: 0
+      fav: {
+        color: 'white'
+      },
+      favMovies: []
     };
   },
 
-  created: function() {
+  created: function () {
     this.fetchAllMovies();
   },
 
@@ -414,7 +384,7 @@ export default {
           this.myListMovie();
           this.popularList();
         })
-        .catch(function(error) {
+        .catch(function (error) {
           console.log(error);
         });
     },
@@ -438,6 +408,42 @@ export default {
         let randomNumb = Math.floor(Math.random() * this.moviesAll.length) + 1;
         this.myPopular.push(this.moviesAll[randomNumb]);
       }
+    },
+    favOn(id, fav) {
+      console.log(fav)
+      if (event.target.classList.contains('isFavourite')) {
+        event.target.classList.remove('isFavourite');
+      } else {
+        event.target.classList.add('isFavourite');
+      }
+      if (fav === 1) {
+        event.target.classList.add('isFavourite');
+      }
+      this.favMovies.push(id);
+      this.updateFav();
+    },
+    updateFav() {
+      var data = new FormData();
+      data.append("json", JSON.stringify(this.favMovies));
+
+      // fetch to DB backend
+      let url = `./admin/update_movie_fav.php`;
+      fetch(url, {
+          method: "POST",
+          body: JSON.stringify(this.favMovies)
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          if (!data || typeof data !== "object") {
+            console.log("Favourite update Failed");
+          } else {
+            console.log("Favourite update OK");
+          }
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
     }
   },
 
