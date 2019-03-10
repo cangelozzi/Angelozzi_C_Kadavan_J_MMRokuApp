@@ -21,11 +21,11 @@ export default {
       </div>
 
       <i id="downArrow" class="fas fa-chevron-down"></i>
-
+      <keep-alive>
       <MovieComponent v-if="moviehide" />
       <TvComponent  v-if="tvhide" />
       <MusicComponent  v-if="musichide"/>
-
+      </keep-alive>
     </section>
   `,
 

@@ -69,7 +69,7 @@ export default {
               <v-card-actions class="pa-3">
                 FAVOURITE
                 <v-spacer></v-spacer>
-                <div class="text-xs-center" @click="favOn(myList[0].tv_id, myList[0].tv_fav, $event)">
+                <div v-if="myList.length" class="text-xs-center" @click="favOn(myList[0].tv_id, myList[0].tv_fav, $event)">
                   <p :style="{'isFavourite': fav}"><i @click="favOn()" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
@@ -103,7 +103,7 @@ export default {
               <v-card-actions class="pa-3">
                 FAVOURITE
                 <v-spacer></v-spacer>
-                <div class="text-xs-center" @click="favOn(myList[1].tv_id, myList[1].tv_fav, $event)">
+                <div v-if="myList.length" class="text-xs-center" @click="favOn(myList[1].tv_id, myList[1].tv_fav, $event)">
                   <p :style="{'isFavourite': fav}"><i @click="favOn()" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
@@ -135,7 +135,7 @@ export default {
               <v-card-actions class="pa-3">
                 FAVOURITE
                 <v-spacer></v-spacer>
-                <div class="text-xs-center" @click="favOn(myList[2].tv_id, myList[2].tv_fav, $event)">
+                <div v-if="myList.length" class="text-xs-center" @click="favOn(myList[2].tv_id, myList[2].tv_fav, $event)">
                   <p :style="{'isFavourite': fav}"><i @click="favOn()" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
@@ -167,7 +167,7 @@ export default {
               <v-card-actions class="pa-3">
                 FAVOURITE
                 <v-spacer></v-spacer>
-                <div class="text-xs-center" @click="favOn(myList[3].tv_id, myList[3].tv_fav, $event)">
+                <div v-if="myList.length" class="text-xs-center" @click="favOn(myList[3].tv_id, myList[3].tv_fav, $event)">
                   <p :style="{'isFavourite': fav}"><i @click="favOn()" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
@@ -225,7 +225,7 @@ export default {
                       <div v-if="myPopular.length" class="headline">{{myPopular[0].tv_title}}</div>
                       <div v-if="myPopular.length" style="font-size: 1.4rem;">{{myPopular[0].tv_desc}}</div>
                       <div v-if="myPopular.length">{{myPopular[0].tv_year}}</div>
-                      <a class="trailer" v-if="myList.length" :href="myPopular[0].tv_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
+                      <a class="trailer" v-if="myPopular.length" :href="myPopular[0].tv_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
                     </div>
                   </v-card-title>
                 </v-flex>
@@ -234,7 +234,7 @@ export default {
               <v-card-actions class="pa-3">
                 FAVOURITE
                 <v-spacer></v-spacer>
-                <div class="text-xs-center" @click="favOn(myPopular[0].tv_id, myPopular[0].tv_fav, $event)">
+                <div v-if="myPopular.length" class="text-xs-center" @click="favOn(myPopular[0].tv_id, myPopular[0].tv_fav, $event)">
                   <p :style="{'isFavourite': fav}"><i @click="favOn()" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
@@ -250,7 +250,7 @@ export default {
                       <div v-if="myPopular.length" class="headline">{{myPopular[1].tv_title}}</div>
                       <div v-if="myPopular.length" style="font-size: 1.4rem;">{{myPopular[1].tv_desc}}</div>
                       <div v-if="myPopular.length">{{myPopular[1].tv_year}}</div>
-                      <a class="trailer" v-if="myList.length" :href="myPopular[1].tv_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
+                      <a class="trailer" v-if="myPopular.length" :href="myPopular[1].tv_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
                     </div>
                   </v-card-title>
                 </v-flex>
@@ -266,7 +266,7 @@ export default {
               <v-card-actions class="pa-3">
                 FAVOURITE
                 <v-spacer></v-spacer>
-                <div class="text-xs-center" @click="favOn(myPopular[1].tv_id, myPopular[1].tv_fav, $event)">
+                <div v-if="myPopular.length" class="text-xs-center" @click="favOn(myPopular[1].tv_id, myPopular[1].tv_fav, $event)">
                   <p :style="{'isFavourite': fav}"><i @click="favOn()" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
@@ -289,7 +289,7 @@ export default {
                       <div v-if="myPopular.length" class="headline">{{myPopular[2].tv_title}}</div>
                       <div v-if="myPopular.length" style="font-size: 1.4rem;">{{myPopular[2].tv_desc}}</div>
                       <div v-if="myPopular.length">{{myPopular[2].tv_year}}</div>
-                      <a class="trailer" v-if="myList.length" :href="myPopular[2].tv_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
+                      <a class="trailer" v-if="myPopular.length" :href="myPopular[2].tv_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
                     </div>
                   </v-card-title>
                 </v-flex>
@@ -298,7 +298,7 @@ export default {
              <v-card-actions class="pa-3">
                 FAVOURITE
                 <v-spacer></v-spacer>
-                <div class="text-xs-center" @click="favOn(myPopular[2].tv_id, myPopular[2].tv_fav, $event)">
+                <div v-if="myPopular.length" class="text-xs-center" @click="favOn(myPopular[2].tv_id, myPopular[2].tv_fav, $event)">
                   <p :style="{'isFavourite': fav}"><i @click="favOn()" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
@@ -314,7 +314,7 @@ export default {
                       <div v-if="myPopular.length" class="headline">{{myPopular[3].tv_title}}</div>
                       <div v-if="myPopular.length" style="font-size: 1.4rem;">{{myPopular[3].tv_desc}}</div>
                       <div v-if="myPopular.length">{{myPopular[3].tv_year}}</div>
-                      <a class="trailer" v-if="myList.length" :href="myPopular[3].tv_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
+                      <a class="trailer" v-if="myPopular.length" :href="myPopular[3].tv_link" data-lity>PLAY TRAILER   <i class="fas fa-play-circle"></i></a>
                     </div>
                   </v-card-title>
                 </v-flex>
@@ -330,7 +330,7 @@ export default {
               <v-card-actions class="pa-3">
                 FAVOURITE
                 <v-spacer></v-spacer>
-                <div class="text-xs-center" @click="favOn(myPopular[3].tv_id, myPopular[3].tv_fav, $event)">
+                <div v-if="myPopular.length" class="text-xs-center" @click="favOn(myPopular[3].tv_id, myPopular[3].tv_fav, $event)">
                   <p :style="{'isFavourite': fav}"><i @click="favOn()" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
