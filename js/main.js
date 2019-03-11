@@ -74,12 +74,12 @@ const vm = new Vue({
 }).$mount("#app");
 
 //! ---------- redirect if not authenticated --------------
-// router.beforeEach((to, from, next) => {
-//   console.log(vm.authenticated);
+router.beforeEach((to, from, next) => {
+  console.log(vm.authenticated);
 
-//   if (!vm.authenticated) {
-//     next("/");
-//   } else {
-//     next();
-//   }
-// });
+  if (!vm.authenticated) {
+    next("/");
+  } else {
+    next();
+  }
+});
