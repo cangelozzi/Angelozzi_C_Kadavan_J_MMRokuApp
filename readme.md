@@ -9,22 +9,86 @@ divided into two distinct categories; administrators (labeled; Parents) and Kids
 the ability to access all of Flashbacks' content and admin controls while 'Kids' will be limited to
 content pushed down from Flashbacks “kid-friendly content" protocol queries. Admin users will
 have the ability to customize settings being pushed down from Flashbacks CMS to provide a
-unique viewing experience for their children. These features may include, but may not be
-exclusive to, such things as ratings, age appropriate (G, Family, PG, AA, A17) genres (rock, rap,
-country, jazz, classical, etc...), cartoons, live action, anime, etc.
+unique viewing experience for their children.
 
-#### TOOLS USED
+## Team
 
+- Camillo Angelozzi (Web Developer)
+- Jeril Kadavan (Web Designer)
+
+### HERO section
+
+![image](images/readme/mockup.png)
+
+## Landing Page
+
+Accessibility for landing page with option to choose a LIGHT or DARK theme ![image](images/readme/d_l_btn.png)
+
+![image](images/readme/home_light.png)
+
+![image](images/readme/home_dark.png)
+
+## Login
+
+![image](images/readme/login_btn.png)
+
+Login appears through button or hamburger sidebar.
+
+![image](images/readme/login.png)
+
+## Users Page
+
+Netflix style users access. Parents which are also ADMIN have access to Settings Dashboard. Kids once loggged in, do not have access to any setting configuration
+
+![image](images/readme/users.png)
+
+## Settings Page
+
+Parents/Admin can limit access to content, block accounts and change accounts roles. All functionality is linked to Database tables.
+
+![image](images/readme/settings.png)
+
+## Content Page
+
+Content is filtered for Parents and Kids. Filter can be changed and accessed just by Parents/Admin. Kids have access to G and Family Rating material.
+
+Rating system available, and play trailer through Youtube channel.
+
+![image](images/readme/content.png)
+
+#### Kids Example
+
+![image](images/readme/content2.png)
+![image](images/readme/trailer.png)
+
+#### Parents Example
+
+![image](images/readme/content3.png)
+
+## SideMenu
+
+SideMenu gives access to main functions and navigation.
+
+![image](images/readme/sidemenu.png)
+
+## Tools used during development phase:
+
+- Adobe Illustrator, Photoshop, XD
+- PHP/MySQL
+- Gulp.js
 - SASS
-- GULP
-- Vue.js for handling data to frontend DOM.
-- PHP connection via PDO class to connect with database.
-- FetchAPI to get data from db query.
+- Javascript Fetch API, to get data from backend database
+- Vuetify
 
-###### Under Construction, due 2019
+## Giving credits for places that helped to do this project
 
-- https://stackoverflow.com/questions/35038857/setting-query-string-using-fetch-get-request
-- https://vuetifyjs.com/en/components/carousels
-- https://sorgalla.com/lity/
+- https://stackoverflow.com/
+- https://vuetifyjs.com/en/
+- https://vuejs.org/
+- https://router.vuejs.org/
 
-#TODO -> DB export
+## Future Improvements
+
+- Move to a Webpack based build in VueCLI3
+- Further refactoring SASS structure.
+- Update Backend, perhaps with a NoSQL structure (NodeJS, MongoDB, GraphQL)
