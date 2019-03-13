@@ -2,6 +2,12 @@
 
 require "scripts/functions.php";
 
-$data = get_movies();
+if (isset($_GET['myList'])) {
+    $data = myList_movies();
+} else {
+    $data = get_movies();
+}
+
+
 
 echo json_encode($data);

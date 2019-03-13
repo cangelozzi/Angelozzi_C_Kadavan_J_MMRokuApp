@@ -362,6 +362,7 @@ export default {
 
   created: function () {
     this.fetchAllMusic();
+    this.myListMusic();
   },
 
   methods: {
@@ -381,7 +382,6 @@ export default {
             );
           }
           this.displayFourRandomMusic();
-          this.myListMusic();
           this.popularList();
         })
         .catch(function (error) {
@@ -397,17 +397,38 @@ export default {
     },
 
     myListMusic() {
-      for (let i = 1; i <= 4; i++) {
-        let randomNumb = Math.floor(Math.random() * this.musicAll.length) + 1;
-        this.myList.push(this.musicAll[randomNumb]);
-      }
+      let url = "./admin/get_music.php?myList";
+
+      fetch(url)
+        .then(res => res.json())
+        .then(data => {
+          // sort movies by user access type
+          if (localStorage.getItem("user_access") > 3) {
+            this.myList = data;
+          } else {
+            this.myList = data.filter(
+              // user with access type of 3 and below will have access only to G rated musics.
+              music => music.music_certificate === "G"
+            );
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     },
 
     popularList() {
-      for (let i = 1; i <= 4; i++) {
-        let randomNumb = Math.floor(Math.random() * this.musicAll.length) + 1;
-        this.myPopular.push(this.musicAll[randomNumb]);
+      this.myPopular = this.musicAll;
+      let vm = this;
+
+      // sort randomly Popular movie
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
       }
+
+      this.myPopular.sort(function (a, b) {
+        return getRandomInt(vm.myPopular.length) - getRandomInt(vm.myPopular.length);
+      });
     },
     favOn(id, fav) {
       console.log(id, fav)
