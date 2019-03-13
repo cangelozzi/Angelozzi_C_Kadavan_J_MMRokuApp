@@ -73,6 +73,8 @@ export default {
                   <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
+
+              <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=96&layout=button&action=like&size=small&show_faces=true&share=true&height=65&appId" width="96" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
             </v-card>
           </v-flex>
 
@@ -107,6 +109,7 @@ export default {
                   <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
+                <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=96&layout=button&action=like&size=small&show_faces=true&share=true&height=65&appId" width="96" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
             </v-card>
           </v-flex>
 
@@ -139,6 +142,7 @@ export default {
                   <p :style="fav"><i @click="favOn($event)" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
+              <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=96&layout=button&action=like&size=small&show_faces=true&share=true&height=65&appId" width="96" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
             </v-card>
           </v-flex>
 
@@ -171,6 +175,7 @@ export default {
                   <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
+              <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=96&layout=button&action=like&size=small&show_faces=true&share=true&height=65&appId" width="96" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
             </v-card>
           </v-flex>
         </v-layout>
@@ -238,6 +243,7 @@ export default {
                   <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
+              <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=96&layout=button&action=like&size=small&show_faces=true&share=true&height=65&appId" width="96" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
             </v-card>
           </v-flex>
 
@@ -270,6 +276,7 @@ export default {
                   <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
+                <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=96&layout=button&action=like&size=small&show_faces=true&share=true&height=65&appId" width="96" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
             </v-card>
           </v-flex>
 
@@ -302,6 +309,7 @@ export default {
                   <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
+                <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=96&layout=button&action=like&size=small&show_faces=true&share=true&height=65&appId" width="96" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
             </v-card>
           </v-flex>
 
@@ -334,6 +342,7 @@ export default {
                   <p :style="{'isFavourite': fav}"><i @click="favOn($event)" class="fas fa-heart"></i></p>
                 </div>
               </v-card-actions>
+              <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=96&layout=button&action=like&size=small&show_faces=true&share=true&height=65&appId" width="96" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
             </v-card>
           </v-flex>
         </v-layout>
