@@ -65,6 +65,10 @@ Rating system available, and play trailer through Youtube channel.
 
 ![image](images/readme/content3.png)
 
+#### Facebook links - Social Media integration
+
+![image](images/readme/fb.png)
+
 ## SideMenu
 
 SideMenu gives access to main functions and navigation.
