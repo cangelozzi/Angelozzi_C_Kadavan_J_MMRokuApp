@@ -65,7 +65,8 @@ Rating system available, and play trailer through Youtube channel.
 
 ![image](images/readme/content3.png)
 
-#### Facebook links - Social Media integration
+## Facebook links - Social Media integration
+Possibility to like and share preferred media content.
 
 ![image](images/readme/fb.png)
 
