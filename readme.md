@@ -1,4 +1,4 @@
-### Roku ‘Flashback’ microsite
+# Roku ‘Flashback’ microsite
 
 The Flashback app is part of the Roku streaming service. Subscribers can use this app to
 access three separate flashback features; movies, television (tv) and music. Each of these three
@@ -16,7 +16,7 @@ unique viewing experience for their children.
 - Camillo Angelozzi (Web Developer)
 - Jeril Kadavan (Web Designer)
 
-### HERO section
+## HERO section
 
 ![image](images/readme/mockup.png)
 
@@ -56,12 +56,12 @@ Rating system available, and play trailer through Youtube channel.
 
 ![image](images/readme/content.png)
 
-#### Kids Example
+## Kids Example
 
 ![image](images/readme/content2.png)
 ![image](images/readme/trailer.png)
 
-#### Parents Example
+## Parents Example
 
 ![image](images/readme/content3.png)
 
