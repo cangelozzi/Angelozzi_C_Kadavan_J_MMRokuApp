@@ -2,6 +2,11 @@
 
 require "scripts/functions.php";
 
-$data = get_music();
+if (isset($_GET['myList'])) {
+    $data = myList_music();
+} else {
+    $data = get_music();
+}
+
 
 echo json_encode($data);

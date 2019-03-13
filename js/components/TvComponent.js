@@ -362,6 +362,7 @@ export default {
 
   created: function () {
     this.fetchAllTvShows();
+    this.myListTvShows();
   },
 
   methods: {
@@ -381,7 +382,6 @@ export default {
             );
           }
           this.displayFourRandomTvShows();
-          this.myListTvShows();
           this.popularList();
         })
         .catch(function (error) {
@@ -397,17 +397,38 @@ export default {
     },
 
     myListTvShows() {
-      for (let i = 1; i <= 4; i++) {
-        let randomNumb = Math.floor(Math.random() * this.tvAll.length) + 1;
-        this.myList.push(this.tvAll[randomNumb]);
-      }
+      let url = "./admin/get_tvshows.php?myList";
+
+      fetch(url)
+        .then(res => res.json())
+        .then(data => {
+          // sort movies by user access type
+          if (localStorage.getItem("user_access") > 3) {
+            this.myList = data;
+          } else {
+            this.myList = data.filter(
+              // user with access type of 3 and below will have access only to G rated tvs.
+              tv => tv.tv_certificate === "G"
+            );
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     },
 
     popularList() {
-      for (let i = 1; i <= 4; i++) {
-        let randomNumb = Math.floor(Math.random() * this.tvAll.length) + 1;
-        this.myPopular.push(this.tvAll[randomNumb]);
+      this.myPopular = this.tvAll;
+      let vm = this;
+
+      // sort randomly Popular movie
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
       }
+
+      this.myPopular.sort(function (a, b) {
+        return getRandomInt(vm.myPopular.length) - getRandomInt(vm.myPopular.length);
+      });
     },
     favOn(id, fav) {
       console.log(id, fav)
